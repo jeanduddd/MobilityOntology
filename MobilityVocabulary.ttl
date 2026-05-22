@@ -100,6 +100,96 @@
     skos:prefLabel "Other Transportation Mode"@en ;
     skos:altLabel ""@en .
 
+#Car submodes
+
+:personalVehiculeDriver a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :Car ;
+    skos:definition ""@en ;
+    skos:prefLabel "personal vehicule driver"@en ;
+    skos:altLabel ""@en .
+
+:personalVehiculePassenger a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :Car ;
+    skos:definition ""@en ;
+    skos:prefLabel "personal vehicule passenger"@en ;
+    skos:altLabel ""@en .
+
+:TaxiPassenger a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :Car ;
+    skos:definition ""@en ;
+    skos:prefLabel "taxi passenger"@en ;
+    skos:altLabel ""@en .
+
+#Public transport submodes
+:Bus a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :PublicTransport ;
+    skos:definition ""@en ;
+    skos:prefLabel "Bus"@en ;
+    skos:altLabel ""@en .
+
+:Tramway a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :PublicTransport ;
+    skos:definition ""@en ;
+    skos:prefLabel "Tramway"@en ;
+    skos:altLabel ""@en .
+
+:Coach a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :PublicTransport ;
+    skos:definition ""@en ;
+    skos:prefLabel "Coach"@en ;
+    skos:altLabel ""@en .
+
+:SNFCPassenger a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :PublicTransport ;
+    skos:definition ""@en ;
+    skos:prefLabel "SNFC Passenger"@en ;
+    skos:altLabel ""@en .
+
+#Other transportation submodes
+:twoWheelsLowerThan50cm3 a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "two wheels < 50cm3"@en ;
+    skos:altLabel ""@en .
+
+:twoWheelsGreaterOrEqualTo50cm3 a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "two wheels ≥ 50cm3"@en ;
+    skos:altLabel ""@en .
+
+:Wheelchair a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "Wheelchair"@en ;
+    skos:altLabel ""@en .
+
+:CableCar a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "cable car"@en ;
+    skos:altLabel ""@en .
+
+:plane a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:broader :OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "plane"@en ;
+    skos:altLabel ""@en .
+
+
+
 ###TODO implement sub modes
 
 #Group Profile Theme
