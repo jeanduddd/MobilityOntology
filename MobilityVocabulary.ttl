@@ -1,0 +1,110 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <http://example.org/mobInd#> .
+
+:MobilityOntologyVocabulary rdf:type owl:Ontology ;
+    rdfs:label "Mobility Ontology Vocabulary" ;
+    rdfs:comment "SKOS vocabulary for territorial mobility" ;
+    owl:versionInfo "1.0" ;
+    owl:imports :MobilityOntology .
+
+### Theme Vocabulary
+
+:ThemeScheme a skos:ConceptScheme;
+    skos:prefLabel "Global theme vocabulary"@en .
+
+#Trip Purpose Theme
+
+:TripPurposeCollection a skos:Collection ;
+    skos:inScheme :ThemeScheme ;
+    skos:member :Work, :Home, :Studying, :Shopping, :Leisure, :OtherTripPurpose ;
+    skos:prefLabel "Trip purpose collection"@en ;
+    skos:altLabel ""@en ;
+    skos:hiddenLabel ""@en .
+
+:Work a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Work"@en ;
+    skos:altLabel ""@en .
+
+:Home a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Home"@en ;
+    skos:altLabel ""@en .
+    
+:Studying a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Studying"@en ;
+    skos:altLabel ""@en .
+
+:Shopping a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Shopping"@en ;
+    skos:altLabel ""@en .
+
+:Leisure a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Leisure"@en ;
+    skos:altLabel ""@en .
+
+:OtherTripPurpose a skos:Concept, :TripPurpose ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Other Trip Purpose"@en ;
+    skos:altLabel ""@en .
+
+###TODO implement sub purpose
+
+#Transportation Mode Theme
+
+:TransportationModeCollection a skos:Collection ;
+    skos:inScheme :ThemeScheme ;
+    skos:member :Walk, :Bike, :Car, :PublicTransport, :OtherTransportationMode ;
+    skos:prefLabel "Transportation mode collection"@en .
+
+:Walk a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Walk"@en ;
+    skos:altLabel ""@en .
+
+:Bike a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Bike"@en ;
+    skos:altLabel ""@en .
+
+:Car a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Car"@en ;
+    skos:altLabel ""@en .
+
+:PublicTransport a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Public Transport"@en ;
+    skos:altLabel ""@en .
+
+:OtherTransportationMode a skos:Concept, :TransportationMode ;
+    skos:inScheme :ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Other Transportation Mode"@en ;
+    skos:altLabel ""@en .
+
+###TODO implement sub modes
+
+#Group Profile Theme
+
+:GroupProfileCollection a skos:Collection ;
+    skos:inScheme :ThemeScheme ;
+    skos:member :blabla ;
+    skos:prefLabel "Group profile collection"@en .
