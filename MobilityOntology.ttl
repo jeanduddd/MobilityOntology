@@ -4,20 +4,21 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix space: <http://www.opengis.net/ont/geosparql#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix : <http://example.org/mobInd#> .
+@prefix : <http://example.org/MobilityOntology#> .
 
-:monOnto rdf:type owl:Ontology ;
+:MobilityOntology rdf:type owl:Ontology ;
     rdfs:label "Mobility Ontology" ;
     rdfs:comment "Representation of territorial mobility indicators" ;
     owl:versionInfo "1.0" .
 
-### General Indocators
+### Indicators
 
-#rdfs:value to add a value to the indicator
-#prov:wasDerivedFrom to indicate which indicator it was derived from
+# General Indicator
+# Use rdfs:value from RDF Schema link an indicator to its value
+# Use prov:wasDerivedFrom from PROV ontology to link the indicator to the indicator from which it was derived
 :Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Indicator"@en ;
@@ -41,13 +42,14 @@
     rdfs:label "has group profile"@en ;
     rdfs:comment ""@en .
 
+#TODO describe owl time properties
 :hasTime a owl:ObjectProperty ;
     rdfs:domain :Indicator ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
     rdfs:comment ""@en .
 
-#Territory indicators
+#Territory Indicator
 
 :TerritoryIndicator a owl:Class ;
     rdfs:subClassOf :Indicator ;
@@ -60,7 +62,7 @@
     rdfs:label "has spatial location"@en ;
     rdfs:comment ""@en .
 
-#Flow indicators
+#Flow Indicator
 
 :FlowIndicator a owl:Class ;
     rdfs:subClassOf :Indicator ;
@@ -103,10 +105,10 @@
 
 ### Space
 
-#Can add a geometry as it's also a Feature from GeoSparql
-#Can specify its Area by using hasMetricArea (in m²)
+# Use geo:hasGeometry from GeoSPARQL ontology to link the geographic area to its geometry
+# Use geo:hasMetricArea from GeoSPARQL ontology to link the geographic area to its area in m²
 :Space a owl:Class ;
-    rdfs:subClassOf space:Feature ;
+    rdfs:subClassOf geo:Feature ;
     rdfs:label "Space"@en ;
     rdfs:comment ""@en .
 
