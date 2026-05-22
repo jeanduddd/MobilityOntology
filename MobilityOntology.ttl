@@ -1,0 +1,158 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix space: <http://www.opengis.net/ont/geosparql#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <http://example.org/mobInd#> .
+
+:monOnto rdf:type owl:Ontology ;
+    rdfs:label "Mobility Ontology" ;
+    rdfs:comment "Representation of territorial mobility indicators" ;
+    owl:versionInfo "1.0" .
+
+### General Indocators
+
+#rdfs:value to add a value to the indicator
+#prov:wasDerivedFrom to indicate which indicator it was derived from
+:Indicator a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Indicator"@en ;
+    rdfs:comment ""@en .
+
+:hasTransportationMode a owl:ObjectProperty ;
+    rdfs:domain :Indicator ;
+    rdfs:range :TransportationMode ;
+    rdfs:label "has transportation mode"@en ;
+    rdfs:comment ""@en .
+
+:hasTripPurpose a owl:ObjectProperty ;
+    rdfs:domain :Indicator ;
+    rdfs:range :TripPurpose ;
+    rdfs:label "hs trip purpose"@en ;
+    rdfs:comment ""@en .  
+
+:hasGroupProfile a owl:ObjectProperty ;
+    rdfs:domain :Indicator ;
+    rdfs:range :GroupProfile ;
+    rdfs:label "has group profile"@en ;
+    rdfs:comment ""@en .
+
+:hasTime a owl:ObjectProperty ;
+    rdfs:domain :Indicator ;
+    rdfs:range time:Interval ;
+    rdfs:label "has time"@en ;
+    rdfs:comment ""@en .
+
+#Territory indicators
+
+:TerritoryIndicator a owl:Class ;
+    rdfs:subClassOf :Indicator ;
+    rdfs:label "Territory indicator"@en ;
+    rdfs:comment ""@en .
+
+:hasSpatialLocation a owl:ObjectProperty ;
+    rdfs:domain :TerritoryIndicator ;
+    rdfs:range :Space ;
+    rdfs:label "has spatial location"@en ;
+    rdfs:comment ""@en .
+
+#Flow indicators
+
+:FlowIndicator a owl:Class ;
+    rdfs:subClassOf :Indicator ;
+    rdfs:label "Flow indocator"@en ;
+    rdfs:comment ""@en .
+
+:hasOrigin a owl:ObjectProperty ;
+    rdfs:domain :FlowIndicator ;
+    rdfs:range :Space ;
+    rdfs:label "has origin"@en ;
+    rdfs:comment ""@en .
+
+:hasDestination a owl:ObjectProperty ;
+    rdfs:domain :FlowIndicator ;
+    rdfs:range :Space ;
+    rdfs:label "has description"@en ;
+    rdfs:comment ""@en .
+
+### Theme
+
+:Theme a owl:Class ;
+    rdfs:label "Theme"@en ;
+    rdfs:comment "Thematic attributes used to deduce information matrices."@en .
+
+:GroupProfile a owl:Class ;
+    rdfs:subClassOf :Theme ;
+    rdfs:label "Group profile"@en ;
+    rdfs:comment "Thematic attribute corresponding to the profile caracteristics of a group of people"@en .
+
+:TripPurpose a owl:Class ;
+    rdfs:subClassOf :Theme ;
+    rdfs:label "Trip Purpose"@en ;
+    rdfs:comment "Thematic attribute of the different purposes of a trip"@en .
+
+:TransportationMode a owl:Class ;
+    rdfs:subClassOf :Theme ;
+    rdfs:label "Transportation Mode"@en ;
+    rdfs:comment "Thematic attribute of the different transportation mode that can be used for a trip" .
+
+
+### Space
+
+#Can add a geometry as it's also a Feature from GeoSparql
+#Can specify its Area by using hasMetricArea (in m²)
+:Space a owl:Class ;
+    rdfs:subClassOf space:Feature ;
+    rdfs:label "Space"@en ;
+    rdfs:comment ""@en .
+
+:isPartOf a owl:ObjectProperty ;
+    rdfs:domain :Space ;
+    rdfs:range :Space ;
+    rdfs:label "is part of"@en ;
+    rdfs:comment ""@en .
+
+:hasTerritorialPartition a owl:ObjectProperty ;
+    rdfs:domain :Space ;
+    rdfs:range :TerritorialPartition ;
+    rdfs:label "has territorial partition"@en ;
+    rdfs:comment ""@en .
+
+:hasID a owl:DatatypeProperty ;
+    rdfs:domain :Space ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has id"@en ;
+    rdfs:comment "link a zone to its ID"@en .
+
+:hasName a owl:DatatypeProperty ;
+    rdfs:domain :Space ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "has name"@en ;
+    rdfs:comment "link a zone to its name"@en .
+
+:hasPop a owl:DatatypeProperty ;
+    rdfs:domain :Space ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has population"@en ;
+    rdfs:comment "link a zone to its number of residents"@en .
+
+### Territorial partition
+:TerritorialPartition a owl:Class ;
+    rdfs:label "Territorial Partition"@en ;
+    rdfs:comment ""@en .
+
+:hasPartitionID a owl:DatatypeProperty ;
+    rdfs:domain :TerritorialPartition ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "has partition id"@en ;
+    rdfs:comment ""@en .
+
+:hasParts a owl:DatatypeProperty ;
+    rdfs:domain :TerritorialPartition ;
+    rdfs:range xsd:integer ;
+    rdfs:label "has parts"@en ;
+    rdfs:comment ""@en .
