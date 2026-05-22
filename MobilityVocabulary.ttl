@@ -108,3 +108,80 @@
     skos:inScheme :ThemeScheme ;
     skos:member :blabla ;
     skos:prefLabel "Group profile collection"@en .
+
+### Indicator Vocabulary
+
+:IndicatorsScheme a skos:ConceptScheme;
+    skos:prefLabel "Global indicator vocabulary"@en .
+
+#Territorial Indicators
+
+:TerritorialIndicatorsCollection a skos:Collection ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:member :PresenceOfMovers, :PresenceOfMoversPerActivity, :ActivityShare, :PresenceDensity, :FluctuationRate, :PresenceFluctuation, :Attractiveness, :MobilityRate, :AttributeShare ;
+    skos:prefLabel "Territorial indicators collection"@en ;
+    skos:altLabel ""@en ;
+    skos:hiddenLabel ""@en .
+
+:PresenceOfMovers a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Presence of movers"@en ;
+    skos:altLabel ""@en .
+
+:PresenceOfMoversPerActivity a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Presence of movers per activity"@en ;
+    skos:altLabel ""@en .
+
+:ActivityShare a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Activity share"@en ;
+    skos:altLabel ""@en .
+
+:PresenceDensity a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Presence density"@en ;
+    skos:altLabel ""@en .
+
+:FluctuationRate a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Fluctuation rate"@en ;
+    skos:altLabel ""@en .
+
+:PresenceFluctuation a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Presence fluctuation"@en ;
+    skos:altLabel ""@en .
+
+:Attractiveness a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Attractiveness"@en ;
+    skos:altLabel ""@en .
+
+:MobilityRate a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Mobility rate"@en ;
+    skos:altLabel ""@en .
+
+:AttributeShare a skos:Concept, :TerritoryIndicator ;
+    skos:inScheme :IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Attribute share"@en ;
+    skos:altLabel ""@en .
+
+#Flow Indicators ???
+
+# :FlowIndicatorsCollection a skos:Collection ;
+#     skos:inScheme :IndicatorsScheme ;
+#     skos:member :;
+#     skos:prefLabel "Flow indicators collection"@en ;
+#     skos:altLabel ""@en ;
+#     skos:hiddenLabel ""@en .
