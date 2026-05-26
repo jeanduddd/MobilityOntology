@@ -7,9 +7,9 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix : <http://example.org/MobilityOntology#> .
+@prefix mvdo: <http://ns.inria.fr/movida/ontology> .
 
-:MobilityOntology rdf:type owl:Ontology ;
+:mvdo a owl:Ontology ;
     rdfs:label "Mobility Ontology" ;
     rdfs:comment "Representation of territorial mobility indicators" ;
     owl:versionInfo "1.0" .
@@ -19,28 +19,37 @@
 # General Indicator
 # Use rdfs:value from RDF Schema to link an indicator to its value
 # Use prov:wasDerivedFrom from PROV ontology to link the indicator to the indicator from which it was derived
-:Indicator a owl:Class ;
+mvdo:Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Indicator"@en ;
     rdfs:comment "Superclass for every type of indicator"@en .
 
-:hasTransportationMode a owl:ObjectProperty ;
-    rdfs:domain :Indicator ;
-    rdfs:range :TransportationMode ;
+mvdo:hasTransportationMode a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range mvdo:TransportationMode ;
     rdfs:label "has transportation mode"@en ;
     rdfs:comment "Links an indicator to the thematic attribute of the transportation mode it has been computed with"@en .
 
-:hasTripPurpose a owl:ObjectProperty ;
-    rdfs:domain :Indicator ;
-    rdfs:range :TripPurpose ;
+mvdo:hasTripPurpose a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range mvdo:TripPurpose ;
     rdfs:label "has trip purpose"@en ;
     rdfs:comment "Links an indicator to thematic attribute of the trip purpose it has been computed with"@en .  
 
-:hasGroupProfile a owl:ObjectProperty ;
-    rdfs:domain :Indicator ;
-    rdfs:range :GroupProfile ;
-    rdfs:label "has group profile"@en ;
-    rdfs:comment "Links an indicator to the thematic attribute of the group profile it has been computed with"@en .
+mvdo:hasPopulationProfile a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range mvdo:PopulationProfile ;
+    rdfs:label "has population profile"@en ;
+    rdfs:comment "Links an indicator to the thematic attribute of the population profile it has been computed with"@en .
+
+mvdo:hasIndicatorType a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    #juste :Indicator pour forcer à mettre un indicateur et pas un mode de transport?
+    #spécifiquement pour territory et si c un flux ne pas mettre la propriété?
+    #ça n'a pas d'importance et laisser skos?
+    rdfs:range skos:Concept ;
+    rdfs:label "has indicator type"@en ;
+    rdfs:comment "Links an indicator observation to the conceptual type of indicator it instantiates."@en .
 
 
 # Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
@@ -54,118 +63,118 @@
 # Use time:numericalDuration from OWL Time to link a Duration to its numerical value
 
 # And use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
-:hasTime a owl:ObjectProperty ;
-    rdfs:domain :Indicator ;
+mvdo:hasTimeInterval a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
     rdfs:comment "Links an indicator to the temporal extent it was computed"@en .
 
 #Territory Indicator
 
-:TerritoryIndicator a owl:Class ;
-    rdfs:subClassOf :Indicator ;
+mvdo:TerritoryIndicator a owl:Class ;
+    rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Territory indicator"@en ;
     rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
 
-:hasSpatialLocation a owl:ObjectProperty ;
-    rdfs:domain :TerritoryIndicator ;
-    rdfs:range :Space ;
+mvdo:hasSpatialLocation a owl:ObjectProperty ;
+    rdfs:domain mvdo:TerritoryIndicator ;
+    rdfs:range mvdo:Space ;
     rdfs:label "has spatial location"@en ;
     rdfs:comment "Links a territory indicator to the location it describes"@en .
 
-#Flow Indicator
+#Travel Flow
 
-:FlowIndicator a owl:Class ;
-    rdfs:subClassOf :Indicator ;
-    rdfs:label "Flow indocator"@en ;
+mvdo:TravelFlow a owl:Class ;
+    rdfs:subClassOf mvdo:Indicator ;
+    rdfs:label "Travel flow"@en ;
     rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
 
-:hasOrigin a owl:ObjectProperty ;
-    rdfs:domain :FlowIndicator ;
-    rdfs:range :Space ;
+mvdo:hasOrigin a owl:ObjectProperty ;
+    rdfs:domain mvdo:FlowIndicator ;
+    rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
     rdfs:comment "Links a flow indicator to its origin"@en .
 
-:hasDestination a owl:ObjectProperty ;
-    rdfs:domain :FlowIndicator ;
-    rdfs:range :Space ;
+mvdo:hasDestination a owl:ObjectProperty ;
+    rdfs:domain mvdo:FlowIndicator ;
+    rdfs:range mvdo:Space ;
     rdfs:label "has description"@en ;
     rdfs:comment "Links a flow indicator to its destination"@en .
 
 ### Theme
 
-:Theme a owl:Class ;
+mvdo:Theme a owl:Class ;
     rdfs:label "Theme"@en ;
-    rdfs:comment "Thematic attributes used to deduce information matrices."@en .
+    rdfs:comment "Describes the objects and spatial events according to socio-demographic aspects, activities and trip purposes, and transportation modes"@en .
 
-:GroupProfile a owl:Class ;
-    rdfs:subClassOf :Theme ;
-    rdfs:label "Group profile"@en ;
-    rdfs:comment "Thematic attribute corresponding to the profile caracteristics of a group of people"@en .
+mvdo:PopulationProfile a owl:Class ;
+    rdfs:subClassOf mvdo:Theme ;
+    rdfs:label "population profile"@en ;
+    rdfs:comment "Thematic attribute that describes the profile characteristics of a group of people associated with an indicator, for instance socio-demographic characteristics."@en .
 
-:TripPurpose a owl:Class ;
-    rdfs:subClassOf :Theme ;
+mvdo:TripPurpose a owl:Class ;
+    rdfs:subClassOf mvdo:Theme ;
     rdfs:label "Trip Purpose"@en ;
-    rdfs:comment "Thematic attribute of the different purposes of a trip"@en .
+    rdfs:comment "Thematic attribute that describes the main reason to do a trip"@en .
 
-:TransportationMode a owl:Class ;
-    rdfs:subClassOf :Theme ;
+mvdo:TransportationMode a owl:Class ;
+    rdfs:subClassOf mvdo:Theme ;
     rdfs:label "Transportation Mode"@en ;
-    rdfs:comment "Thematic attribute of the different transportation mode that can be used for a trip" .
+    rdfs:comment "Thematic attribute that describes with which travel medium the trip is made"@en .
 
 
 ### Space
 
 # Use geo:hasGeometry from GeoSPARQL ontology to link the geographic area to its geometry
 # Use geo:hasMetricArea from GeoSPARQL ontology to link the geographic area to its area in m²
-:Space a owl:Class ;
+mvdo:Space a owl:Class ;
     rdfs:subClassOf geo:Feature ;
     rdfs:label "Space"@en ;
     rdfs:comment "A class used to describe a spatial location"@en .
 
-:isPartOf a owl:ObjectProperty ;
-    rdfs:domain :Space ;
-    rdfs:range :Space ;
+mvdo:isPartOf a owl:ObjectProperty ;
+    rdfs:domain mvdo:Space ;
+    rdfs:range mvdo:Space ;
     rdfs:label "is part of"@en ;
     rdfs:comment "Links a spatial location to the one that surrounds it"@en .
 
-:hasTerritorialPartition a owl:ObjectProperty ;
-    rdfs:domain :Space ;
-    rdfs:range :TerritorialPartition ;
+mvdo:hasTerritorialPartition a owl:ObjectProperty ;
+    rdfs:domain mvdo:Space ;
+    rdfs:range mvdo:TerritorialPartition ;
     rdfs:label "has territorial partition"@en ;
     rdfs:comment "Links a spatial location to the description of the territorial partition used for the indicator"@en .
 
-:hasID a owl:DatatypeProperty ;
-    rdfs:domain :Space ;
+mvdo:hasID a owl:DatatypeProperty ;
+    rdfs:domain mvdo:Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has id"@en ;
     rdfs:comment "Links a spatial location to its ID"@en .
 
-:hasName a owl:DatatypeProperty ;
-    rdfs:domain :Space ;
+mvdo:hasName a owl:DatatypeProperty ;
+    rdfs:domain mvdo:Space ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has name"@en ;
     rdfs:comment "Links a spatial location to its name"@en .
 
-:hasPop a owl:DatatypeProperty ;
-    rdfs:domain :Space ;
+mvdo:hasPopulation a owl:DatatypeProperty ;
+    rdfs:domain mvdo:Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has population"@en ;
     rdfs:comment "Links a spatial location to its number of residents"@en .
 
 ### Territorial partition
-:TerritorialPartition a owl:Class ;
+mvdo:TerritorialPartition a owl:Class ;
     rdfs:label "Territorial Partition"@en ;
     rdfs:comment "A class used to describe the spatial granularity"@en .
 
-:hasPartitionID a owl:DatatypeProperty ;
-    rdfs:domain :TerritorialPartition ;
+mvdo:hasPartitionID a owl:DatatypeProperty ;
+    rdfs:domain mvdo:TerritorialPartition ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has partition id"@en ;
     rdfs:comment "Links a territorial partition to its ID"@en .
 
-:hasParts a owl:DatatypeProperty ;
-    rdfs:domain :TerritorialPartition ;
+mvdo:hasParts a owl:DatatypeProperty ;
+    rdfs:domain mvdo:TerritorialPartition ;
     rdfs:range xsd:integer ;
     rdfs:label "has parts"@en ;
     rdfs:comment "Links a territorial partition to the number of spatial location it contains"@en .
