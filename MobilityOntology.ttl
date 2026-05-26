@@ -22,64 +22,64 @@
 :Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity ;
     rdfs:label "Indicator"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Superclass for every type of indicator"@en .
 
 :hasTransportationMode a owl:ObjectProperty ;
     rdfs:domain :Indicator ;
     rdfs:range :TransportationMode ;
     rdfs:label "has transportation mode"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator to the thematic attribute of the transportation mode it has been computed with"@en .
 
 :hasTripPurpose a owl:ObjectProperty ;
     rdfs:domain :Indicator ;
     rdfs:range :TripPurpose ;
-    rdfs:label "hs trip purpose"@en ;
-    rdfs:comment ""@en .  
+    rdfs:label "has trip purpose"@en ;
+    rdfs:comment "Links an indicator to thematic attribute of the trip purpose it has been computed with"@en .  
 
 :hasGroupProfile a owl:ObjectProperty ;
     rdfs:domain :Indicator ;
     rdfs:range :GroupProfile ;
     rdfs:label "has group profile"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator to the thematic attribute of the group profile it has been computed with"@en .
 
 #TODO describe owl time properties
 :hasTime a owl:ObjectProperty ;
     rdfs:domain :Indicator ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator to the temporal extent it was computed"@en .
 
 #Territory Indicator
 
 :TerritoryIndicator a owl:Class ;
     rdfs:subClassOf :Indicator ;
     rdfs:label "Territory indicator"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
 
 :hasSpatialLocation a owl:ObjectProperty ;
     rdfs:domain :TerritoryIndicator ;
     rdfs:range :Space ;
     rdfs:label "has spatial location"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a territory indicator to the location it describes"@en .
 
 #Flow Indicator
 
 :FlowIndicator a owl:Class ;
     rdfs:subClassOf :Indicator ;
     rdfs:label "Flow indocator"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
 
 :hasOrigin a owl:ObjectProperty ;
     rdfs:domain :FlowIndicator ;
     rdfs:range :Space ;
     rdfs:label "has origin"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a flow indicator to its origin"@en .
 
 :hasDestination a owl:ObjectProperty ;
     rdfs:domain :FlowIndicator ;
     rdfs:range :Space ;
     rdfs:label "has description"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a flow indicator to its destination"@en .
 
 ### Theme
 
@@ -110,51 +110,51 @@
 :Space a owl:Class ;
     rdfs:subClassOf geo:Feature ;
     rdfs:label "Space"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "A class used to describe a spatial location"@en .
 
 :isPartOf a owl:ObjectProperty ;
     rdfs:domain :Space ;
     rdfs:range :Space ;
     rdfs:label "is part of"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a spatial location to the one that surrounds it"@en .
 
 :hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain :Space ;
     rdfs:range :TerritorialPartition ;
     rdfs:label "has territorial partition"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a spatial location to the description of the territorial partition used for the indicator"@en .
 
 :hasID a owl:DatatypeProperty ;
     rdfs:domain :Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has id"@en ;
-    rdfs:comment "link a zone to its ID"@en .
+    rdfs:comment "Links a spatial location to its ID"@en .
 
 :hasName a owl:DatatypeProperty ;
     rdfs:domain :Space ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has name"@en ;
-    rdfs:comment "link a zone to its name"@en .
+    rdfs:comment "Links a spatial location to its name"@en .
 
 :hasPop a owl:DatatypeProperty ;
     rdfs:domain :Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has population"@en ;
-    rdfs:comment "link a zone to its number of residents"@en .
+    rdfs:comment "Links a spatial location to its number of residents"@en .
 
 ### Territorial partition
 :TerritorialPartition a owl:Class ;
     rdfs:label "Territorial Partition"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "A class used to describe the spatial granularity"@en .
 
 :hasPartitionID a owl:DatatypeProperty ;
     rdfs:domain :TerritorialPartition ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has partition id"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a territorial partition to its ID"@en .
 
 :hasParts a owl:DatatypeProperty ;
     rdfs:domain :TerritorialPartition ;
     rdfs:range xsd:integer ;
     rdfs:label "has parts"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links a territorial partition to the number of spatial location it contains"@en .
