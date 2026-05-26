@@ -3,266 +3,314 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix : <http://example.org/mobInd#> .
+@prefix mvdth: <http://ns.inria.fr/movida/thesaurus> .
 
-:MobilityOntologyVocabulary rdf:type owl:Ontology ;
+mvdth: a skos:ConceptScheme ;
     rdfs:label "Mobility Ontology Vocabulary" ;
     rdfs:comment "SKOS vocabulary for territorial mobility" ;
     owl:versionInfo "1.0" ;
-    owl:imports :MobilityOntology .
+    owl:imports mvdo: .
 
 ### Theme Vocabulary
 
-:ThemeScheme a skos:ConceptScheme;
+mvdth:ThemeScheme a skos:ConceptScheme;
+    rdfs:comment ""@en ;
     skos:prefLabel "Global theme vocabulary"@en .
 
 #Trip Purpose Theme
 
-:TripPurposeCollection a skos:Collection ;
-    skos:inScheme :ThemeScheme ;
-    skos:member :Work, :Home, :Studying, :Shopping, :Leisure, :OtherTripPurpose ;
+mvdth:TripPurposeCollection a skos:Collection ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:member :Work, mvdth:Home, mvdth:Studying, mvdth:Shopping, mvdth:Leisure, mvdth:OtherTripPurpose ;
     skos:prefLabel "Trip purpose collection"@en ;
-    skos:altLabel ""@en ;
-    skos:hiddenLabel ""@en .
+    skos:definition ""@en .
 
-:Work a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Work a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Work"@en ;
     skos:altLabel ""@en .
 
-:Home a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Home a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Home"@en ;
     skos:altLabel ""@en .
     
-:Studying a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Studying a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Studying"@en ;
     skos:altLabel ""@en .
 
-:Shopping a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Shopping a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Shopping"@en ;
     skos:altLabel ""@en .
 
-:Leisure a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Leisure a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Leisure"@en ;
     skos:altLabel ""@en .
 
-:OtherTripPurpose a skos:Concept, :TripPurpose ;
-    skos:inScheme :ThemeScheme ;
+mvdth:OtherTripPurpose a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Other Trip Purpose"@en ;
+    skos:altLabel ""@en .
+
+
+#Work subpurpose
+mvdth:DeclaredPlaceOfWork a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel ""@en ;
     skos:altLabel ""@en .
 
 ###TODO implement sub purpose
 
 #Transportation Mode Theme
 
-:TransportationModeCollection a skos:Collection ;
-    skos:inScheme :ThemeScheme ;
-    skos:member :Walk, :Bike, :Car, :PublicTransport, :OtherTransportationMode ;
+mvdth:TransportationModeCollection a skos:Collection ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:member mvdth:Walk, mvdth:Bike, mvdth:Car, mvdth:PublicTransport, mvdth:OtherTransportationMode ;
     skos:prefLabel "Transportation mode collection"@en .
 
-:Walk a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Walk a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Walk"@en ;
     skos:altLabel ""@en .
 
-:Bike a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Bike a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Bike"@en ;
     skos:altLabel ""@en .
 
-:Car a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
+mvdth:Car a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Car"@en ;
     skos:altLabel ""@en .
 
-:PublicTransport a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
+mvdth:PublicTransportation a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
-    skos:prefLabel "Public Transport"@en ;
+    skos:prefLabel "Public Transportation"@en ;
     skos:altLabel ""@en .
 
-:OtherTransportationMode a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
+mvdth:OtherTransportationMode a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Other Transportation Mode"@en ;
     skos:altLabel ""@en .
 
 #Car submodes
-
-:personalVehiculeDriver a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :Car ;
+mvdth:PersonalVehiculeDriver a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Car ;
     skos:definition ""@en ;
     skos:prefLabel "personal vehicule driver"@en ;
     skos:altLabel ""@en .
 
-:personalVehiculePassenger a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :Car ;
+mvdth:PersonalVehiculePassenger a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Car ;
     skos:definition ""@en ;
     skos:prefLabel "personal vehicule passenger"@en ;
     skos:altLabel ""@en .
 
-:TaxiPassenger a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :Car ;
+mvdth:TaxiPassenger a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Car ;
     skos:definition ""@en ;
     skos:prefLabel "taxi passenger"@en ;
     skos:altLabel ""@en .
 
 #Public transport submodes
-:Bus a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :PublicTransport ;
+mvdth:Bus a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
     skos:prefLabel "Bus"@en ;
     skos:altLabel ""@en .
 
-:Tramway a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :PublicTransport ;
+mvdth:Tramway a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
     skos:prefLabel "Tramway"@en ;
     skos:altLabel ""@en .
 
-:Coach a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :PublicTransport ;
+mvdth:Coach a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
     skos:prefLabel "Coach"@en ;
     skos:altLabel ""@en .
 
-:SNFCPassenger a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :PublicTransport ;
+mvdth:Train a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
-    skos:prefLabel "SNFC Passenger"@en ;
+    skos:prefLabel "train"@en ;
     skos:altLabel ""@en .
 
 #Other transportation submodes
-:twoWheelsLowerThan50cm3 a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :OtherTransportationMode ;
+mvdth:TwoWheelsLowerThan50cm3 a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
     skos:prefLabel "two wheels < 50cm3"@en ;
     skos:altLabel ""@en .
 
-:twoWheelsGreaterOrEqualTo50cm3 a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :OtherTransportationMode ;
+mvdth:TwoWheelsGreaterOrEqualTo50cm3 a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
     skos:prefLabel "two wheels ≥ 50cm3"@en ;
     skos:altLabel ""@en .
 
-:Wheelchair a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :OtherTransportationMode ;
+mvdth:Wheelchair a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
     skos:prefLabel "Wheelchair"@en ;
     skos:altLabel ""@en .
 
-:CableCar a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :OtherTransportationMode ;
+mvdth:CableCar a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
     skos:prefLabel "cable car"@en ;
     skos:altLabel ""@en .
 
-:plane a skos:Concept, :TransportationMode ;
-    skos:inScheme :ThemeScheme ;
-    skos:broader :OtherTransportationMode ;
+mvdth:Airplane a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
-    skos:prefLabel "plane"@en ;
+    skos:prefLabel "airplane"@en ;
     skos:altLabel ""@en .
 
+mvdth:SchoolTransportation a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "school transportation"@en ;
+    skos:altLabel ""@en .
 
+mvdth:WaterTransportation a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "water transportation"@en ;
+    skos:altLabel ""@en .
 
-###TODO implement sub modes
+mvdth:EmployerSponsoredTransport a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "employer sponsored transport"@en ;
+    skos:altLabel ""@en .
 
-#Group Profile Theme
+mvdth:TruckVan a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "truck van"@en ;
+    skos:altLabel ""@en .
 
-:GroupProfileCollection a skos:Collection ;
-    skos:inScheme :ThemeScheme ;
+mvdth:OtherWheeledTransportationMode a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "other wheeled transportation mode"@en ;
+    skos:altLabel ""@en .
+
+mvdth:MoreOtherModes a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTransportationMode ;
+    skos:definition ""@en ;
+    skos:prefLabel "more other modes"@en ;
+    skos:altLabel ""@en .
+
+###TODO implement sub modes labels and def
+
+#Population Profile Theme
+
+mvdth:PopulationProfileCollection a skos:Collection ;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:member :blabla ;
-    skos:prefLabel "Group profile collection"@en .
+    skos:prefLabel "Population profile collection"@en .
 
 ### Indicator Vocabulary
 
-:IndicatorsScheme a skos:ConceptScheme;
+mvdth:IndicatorsScheme a skos:ConceptScheme;
+    rdfs:comment ""@en;
     skos:prefLabel "Global indicator vocabulary"@en .
 
 #Territorial Indicators
 
-:TerritorialIndicatorsCollection a skos:Collection ;
-    skos:inScheme :IndicatorsScheme ;
-    skos:member :PresenceOfMovers, :PresenceOfMoversPerActivity, :ActivityShare, :PresenceDensity, :FluctuationRate, :PresenceFluctuation, :Attractiveness, :MobilityRate, :AttributeShare ;
+mvdth:TerritorialIndicatorsCollection a skos:Collection ;
+    skos:inScheme mvdth:IndicatorsScheme ;
+    skos:member mvdth:PresenceOfMovers, mvdth:PresenceOfMoversPerActivity, mvdth:ActivityShare, mvdth:PresenceDensity, mvdth:FluctuationRate, mvdth:PresenceFluctuation, mvdth:Attractiveness, mvdth:MobilityRate, mvdth:AttributeShare ;
     skos:prefLabel "Territorial indicators collection"@en ;
     skos:altLabel ""@en ;
     skos:hiddenLabel ""@en .
 
-:PresenceOfMovers a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Presence of movers"@en ;
     skos:altLabel ""@en .
 
-:PresenceOfMoversPerActivity a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:PresenceByPurpose a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Presence of movers per activity"@en ;
     skos:altLabel ""@en .
 
-:ActivityShare a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:ActivityShare a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Activity share"@en ;
     skos:altLabel ""@en .
 
-:PresenceDensity a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:PresenceDensity a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Presence density"@en ;
     skos:altLabel ""@en .
 
-:FluctuationRate a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:FluctuationRate a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Fluctuation rate"@en ;
     skos:altLabel ""@en .
 
-:PresenceFluctuation a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:PresenceFluctuation a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Presence fluctuation"@en ;
     skos:altLabel ""@en .
 
-:Attractiveness a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Attractiveness"@en ;
     skos:altLabel ""@en .
 
-:MobilityRate a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:MobilityRate a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Mobility rate"@en ;
     skos:altLabel ""@en .
 
-:AttributeShare a skos:Concept, :TerritoryIndicator ;
-    skos:inScheme :IndicatorsScheme ;
+mvdth:AttributeShare a skos:Concept, mvdo:TerritoryIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition ""@en ;
     skos:prefLabel "Attribute share"@en ;
     skos:altLabel ""@en .
