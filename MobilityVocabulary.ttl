@@ -14,7 +14,7 @@ mvdth: a skos:ConceptScheme ;
 ### Theme Vocabulary
 
 mvdth:ThemeScheme a skos:ConceptScheme;
-    rdfs:comment ""@en ;
+    skos:definition ""@en ;
     skos:prefLabel "Global theme vocabulary"@en .
 
 #Trip Purpose Theme
@@ -62,11 +62,248 @@ mvdth:OtherTripPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:altLabel ""@en .
 
 
-#Work subpurpose
-mvdth:DeclaredPlaceOfWork a skos:Concept, mvdo:TripPurpose ;
+#Work subpurposes
+mvdth:WorkAtUsualPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Work ;
     skos:definition ""@en ;
-    skos:prefLabel ""@en ;
+    skos:prefLabel "work at usual place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:WorkAtAnotherPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Work ;
+    skos:definition ""@en ;
+    skos:prefLabel "work at another place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:Jobseeker a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Work ;
+    skos:definition ""@en ;
+    skos:prefLabel "jobseeker"@en ;
+    skos:altLabel ""@en .
+
+mvdth:ProfessionalTour a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Work ;
+    skos:definition ""@en ;
+    skos:prefLabel "professional tour"@en ;
+    skos:altLabel ""@en .
+
+#Home subpurposes
+mvdth:MainResidence a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Home ;
+    skos:definition ""@en ;
+    skos:prefLabel "main residence"@en ;
+    skos:altLabel ""@en .
+
+mvdth:OtherResidence a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Home ;
+    skos:definition ""@en ;
+    skos:prefLabel "other residence"@en ;
+    skos:altLabel ""@en .
+
+#Leisure subpurposes
+mvdth:EatingOut a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Leisure ;
+    skos:definition ""@en ;
+    skos:prefLabel "eating out"@en ;
+    skos:altLabel ""@en .
+
+mvdth:SocialVisit a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Leisure ;
+    skos:definition ""@en ;
+    skos:prefLabel "visit someone"@en ;
+    skos:altLabel ""@en .
+
+mvdth:SportsCultureAssociation a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Leisure ;
+    skos:definition ""@en ;
+    skos:prefLabel "Sports culture association"@en ;
+    skos:altLabel ""@en .
+
+#Shopping subpurposes
+mvdth:LargeRetailShopping a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Shopping ;
+    skos:definition ""@en ;
+    skos:prefLabel "large retail shopping"@en ;
+    skos:altLabel ""@en .
+
+mvdth:SmallMediumRetailShopping a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Shopping ;
+    skos:definition ""@en ;
+    skos:prefLabel "small medium retail shopping"@en ;
+    skos:altLabel ""@en .
+
+mvdth:MarketShopping a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Shopping ;
+    skos:definition ""@en ;
+    skos:prefLabel "market shopping"@en ;
+    skos:altLabel ""@en .
+
+mvdth:ShoppingMallMultiPurpose a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Shopping ;
+    skos:definition ""@en ;
+    skos:prefLabel "shopping mall multi purpose"@en ;
+    skos:altLabel ""@en .
+
+#Studying subpurposes
+mvdth:PrimaryEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "primary education usual place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:MiddleSchoolUsualPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "middle school usual place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:HighSchoolUsualPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "high school usual place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:HigherEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "higher education usual place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:PrimaryEducationOtherPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "primary education other place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:MiddleSchoolOtherPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "middle school other place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:HighSchoolOtherPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "high school other place"@en ;
+    skos:altLabel ""@en .
+
+mvdth:HigherEducationOtherPlace a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:Studying ;
+    skos:definition ""@en ;
+    skos:prefLabel "higher education other place"@en ;
+    skos:altLabel ""@en .
+
+#Other subpurposes
+mvdth:Childcare a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "childcare"@en ;
+    skos:altLabel ""@en .
+
+mvdth:Healthcare a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "healthcare"@en ;
+    skos:altLabel ""@en .
+
+mvdth:AdministrativeProcedures a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "administrative procedures"@en ;
+    skos:altLabel ""@en .
+
+mvdth:StrollingAndWindowShopping a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "strolling and window shopping"@en ;
+    skos:altLabel ""@en .
+
+mvdth:AccompanyPersonPresent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "accompany person present"@en ;
+    skos:altLabel ""@en .
+
+mvdth:FetchPersonPresent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "fetch person present"@en ;
+    skos:altLabel ""@en .
+
+mvdth:AccompanyPersonAbsent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "accompany person absent"@en ;
+    skos:altLabel ""@en .
+
+mvdth:FetchPersonAbsent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "fetch person absent"@en ;
+    skos:altLabel ""@en .
+
+mvdth:TransitDropOffPresent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "transit drop off present"@en ;
+    skos:altLabel ""@en .
+
+mvdth:TransitPickUpPresent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "transit pick up present"@en ;
+    skos:altLabel ""@en .
+
+mvdth:TransitDropOffAbsent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "transit drop off absent"@en ;
+    skos:altLabel ""@en .
+
+mvdth:TransitPickUpAbsent a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "transit pick up absent"@en ;
+    skos:altLabel ""@en .
+
+mvdth:UnspecifiedOtherPurpose a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:OtherTripPurpose ;
+    skos:definition ""@en ;
+    skos:prefLabel "unspecified other purpose"@en ;
     skos:altLabel ""@en .
 
 ###TODO implement sub purpose
@@ -160,18 +397,18 @@ mvdth:Train a skos:Concept, mvdo:TransportationMode ;
     skos:altLabel ""@en .
 
 #Other transportation submodes
-mvdth:TwoWheelsLowerThan50cm3 a skos:Concept, mvdo:TransportationMode ;
+mvdth:LightMotorizedTwoWheeler a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
-    skos:prefLabel "two wheels < 50cm3"@en ;
+    skos:prefLabel "Light motorized two wheeler"@en ;
     skos:altLabel ""@en .
 
-mvdth:TwoWheelsGreaterOrEqualTo50cm3 a skos:Concept, mvdo:TransportationMode ;
+mvdth:MotorizedTwoWheeler a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
     skos:definition ""@en ;
-    skos:prefLabel "two wheels ≥ 50cm3"@en ;
+    skos:prefLabel "Motorized two wheeler"@en ;
     skos:altLabel ""@en .
 
 mvdth:Wheelchair a skos:Concept, mvdo:TransportationMode ;
@@ -249,7 +486,7 @@ mvdth:PopulationProfileCollection a skos:Collection ;
 ### Indicator Vocabulary
 
 mvdth:IndicatorsScheme a skos:ConceptScheme;
-    rdfs:comment ""@en;
+    skos:definition ""@en;
     skos:prefLabel "Global indicator vocabulary"@en .
 
 #Territorial Indicators
@@ -258,8 +495,7 @@ mvdth:TerritorialIndicatorsCollection a skos:Collection ;
     skos:inScheme mvdth:IndicatorsScheme ;
     skos:member mvdth:PresenceOfMovers, mvdth:PresenceOfMoversPerActivity, mvdth:ActivityShare, mvdth:PresenceDensity, mvdth:FluctuationRate, mvdth:PresenceFluctuation, mvdth:Attractiveness, mvdth:MobilityRate, mvdth:AttributeShare ;
     skos:prefLabel "Territorial indicators collection"@en ;
-    skos:altLabel ""@en ;
-    skos:hiddenLabel ""@en .
+    skos:definition ""@en .
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
