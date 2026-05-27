@@ -115,7 +115,7 @@ mvdo:PopulationProfile a owl:Class ;
 mvdo:TripPurpose a owl:Class ;
     rdfs:subClassOf mvdo:Theme ;
     rdfs:label "Trip Purpose"@en ;
-    rdfs:comment "Thematic attribute that describes the main reason to do a trip"@en .
+    rdfs:comment "Thematic attribute that describes the main reason for making a trip"@en .
 
 mvdo:TransportationMode a owl:Class ;
     rdfs:subClassOf mvdo:Theme ;
