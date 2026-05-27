@@ -68,67 +68,67 @@ mvdth:OtherTripPurpose a skos:Concept, mvdo:TripPurpose ;
 mvdth:WorkAtUsualPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Work ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by professional activity to the person's declared or usual workplace"@en ;
     skos:prefLabel "Work at usual place"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Primary workspace"@en, "Declared workspace"@en, "Usual workspace" .
 
 mvdth:WorkAtAnotherPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Work ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by professional activity to a location other than the person's declared or usual workplace"@en ;
     skos:prefLabel "Work at another place"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Unusual workspace"@en, "Other workspace"@en .
 
 mvdth:Jobseeker a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Work ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by the search of an employment, such as job interviews or visiting employment agencies"@en ;
     skos:prefLabel "Jobseeker"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Job interview"@en, "Job search"@en, "visit employment agency" .
 
 mvdth:ProfessionalTour a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Work ;
-    skos:definition ""@en ;
+    skos:definition "Trip made as a part of the job, outside of the usual workplace, such as deliveries or meetings"@en ;
     skos:prefLabel "Professional tour"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Business meeting"@en, "Business trip"@en, "Work outside usual place"@en .
 
 #Home subpurposes
 mvdth:MainResidence a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Home ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by the goal of returning to the main place of residence"@en ;
     skos:prefLabel "Main residence"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Principal residence"@en, "Primary residence"@en, "Main home"@en, "Principal home"@en .
 
 mvdth:OtherResidence a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Home ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by the goal of returning to a place of residence other than the person's main place of residence"@en ;
     skos:prefLabel "Other residence"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Second home"@en, "Secondary residence"@en, "Second residence"@en, "Friend's residence"@en, "Friend's home"@en, "Residence of the parents"@en, "Parents' home"@en .
 
 #Leisure subpurposes
 mvdth:EatingOut a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Leisure ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by the goal of consumming food or drinks outside the person's place of residence"@en ;
     skos:prefLabel "Eating out"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Dining out"@en, "Eating outiside"@en, "Dining outside"@en, "Restaurant"@en .
 
 mvdth:SocialVisit a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Leisure ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by visiting, sociolizing a person such as friends or relatives"@en ;
     skos:prefLabel "Social visit"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Visit parent"@en, "Visit friend"@en, "Sociolizing"@en, "Visit family"@en, "Visiting relatives"@en .
 
 mvdth:SportsCultureAssociation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Leisure ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by doing specific recreational activities including physical exercises, cultural events, or community and club activities"@en ;
     skos:prefLabel "Sports culture association"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Sports"@en, "Associative life"@en, "Culture"@en, "Association"@en, "Physical exercice"@en, "Cultural events"@en, "Community activities"@en .
 
 #Shopping subpurposes
 mvdth:LargeRetailShopping a skos:Concept, mvdo:TripPurpose ;
