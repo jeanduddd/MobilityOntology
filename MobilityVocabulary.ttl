@@ -248,65 +248,65 @@ mvdth:StrollingAndWindowShopping a skos:Concept, mvdo:TripPurpose ;
 mvdth:AccompanyPersonPresent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by escorting another person at a specific destination."@en ;
     skos:prefLabel "Accompany person present"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Traveling to drop-off"@en, "Escorting"@en .
 
 mvdth:FetchPersonPresent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by leaving a pick up destination with the person who has been fetched"@en ;
     skos:prefLabel "Fetch person present"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Returning from pick-up"@en .
 
 mvdth:AccompanyPersonAbsent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by leaving a destination after having escorted and dropped off a person"@en ;
     skos:prefLabel "Accompany person absent"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Returning from drop-off"@en, "Returning after escorting"@en .
 
 mvdth:FetchPersonAbsent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by traveling to a destination to pick up a person"@en ;
     skos:prefLabel "Fetch person absent"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Traveling to pick-up"@en .
 
 mvdth:TransitDropOffPresent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by escorting another person at a transit station"@en ;
     skos:prefLabel "Transit drop off present"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Traveling to transit station for drop-off"@en .
 
 mvdth:TransitPickUpPresent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by leaving a transit station with the person who has been fetched"@en ;
     skos:prefLabel "Transit pick up present"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Returning from transit station with fetched person"@en .
 
 mvdth:TransitDropOffAbsent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by leaving a transit station after having escorted and dropped off a person"@en ;
     skos:prefLabel "Transit drop off absent"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Returning from transit station after drop-off"@en .
 
 mvdth:TransitPickUpAbsent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by traveling to a transit station to pick up a person"@en ;
     skos:prefLabel "Transit pick up absent"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Traveling to transit station for pick-up"@en .
 
-mvdth:UnspecifiedOtherPurpose a skos:Concept, mvdo:TripPurpose ;
+mvdth:OtherPurposeNotListed a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
-    skos:prefLabel "Unspecified other purpose"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by a reason that does not fit in the other categories"@en ;
+    skos:prefLabel "Other purpose not listed"@en ;
+    skos:altLabel "Other specific reason"@en, "Uncategorized purpose"@en .
 
 #Transportation Mode Theme
 
@@ -318,13 +318,13 @@ mvdth:TransportationModeCollection a skos:Collection ;
 
 mvdth:Walk a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
-    skos:definition ""@en ;
+    skos:definition "Transportation mode using our physical capacities and our legs"@en ;
     skos:prefLabel "Walk"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Run"@en .
 
 mvdth:Bike a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
-    skos:definition ""@en ;
+    skos:definition "Unmotorized transportation mode on two wh"@en ;
     skos:prefLabel "Bike"@en ;
     skos:altLabel ""@en .
 
