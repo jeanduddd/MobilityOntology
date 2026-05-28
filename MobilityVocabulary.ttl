@@ -160,12 +160,12 @@ mvdth:ShoppingMallMultiPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:altLabel ""@en .
 
 #Studying subpurposes
-mvdth:UsualPrimaryEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:UsualPrimaryEducation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
     skos:definition "Trip motivated by attending one's usual primary or elementary education institution"@en ;
     skos:prefLabel "Usual primary education"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Usual elementary education"@en, "Usual basic education"@en, "Usual primary school"@en .
 
 mvdth:UsualMiddleSchool a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -174,47 +174,47 @@ mvdth:UsualMiddleSchool a skos:Concept, mvdo:TripPurpose ;
     skos:prefLabel "Usual middle school"@en ;
     skos:altLabel "Usual intermediate school"@en, "Usual senior public school"@en, "Usual junior high school"@en, "Usual junior secondary school"@en ,"Usual lower secondary school"@en .
 
-mvdth:HighSchoolUsualPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:UsualHighSchool a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "High school usual place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending one's usual high school education institution"@en ;
+    skos:prefLabel "Usual high school"@en ;
+    skos:altLabel "Usual senior high school"@en, "Usual upper secondary school"@en, "Usual senior secondary school"@en, "Usual secondary college"@en .
 
-mvdth:HigherEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:UsualHigherEducation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Higher education usual place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending one's usual higher education institution"@en ;
+    skos:prefLabel "Usual higher education"@en ;
+    skos:altLabel "Usual university"@en, "Usual college"@en, "Usual tertiary education"@en, "Usual higher education institution"@en .
 
-mvdth:PrimaryEducationOtherPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:OtherPrimaryEducation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Primary education other place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending a primary or elementary education institution other than the person's usual one"@en ;
+    skos:prefLabel "Other primary education"@en ;
+    skos:altLabel "Other elementary education"@en, "Other basic education"@en, "Other primary school"@en .
 
-mvdth:MiddleSchoolOtherPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:OtherMiddleSchool a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Middle school other place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending a intermediate school or lower secondary education institution other than the person's usual one"@en ;
+    skos:prefLabel "Other middle school"@en ;
+    skos:altLabel "Other intermediate school"@en, "Other senior public school"@en, "Other junior high school"@en, "Other junior secondary school"@en ,"Other lower secondary school"@en .
 
-mvdth:HighSchoolOtherPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:OtherHighSchool a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "High school other place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending a high school education institution other than the person's usual one"@en ;
+    skos:prefLabel "Other high school"@en ;
+    skos:altLabel "Other senior high school"@en, "Other upper secondary school"@en, "Other senior secondary school"@en, "Other secondary college"@en .
 
-mvdth:HigherEducationOtherPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:OtherHigherEducation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Higher education other place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending a higher education institution other than the person's usual one"@en ;
+    skos:prefLabel "Other higher education"@en ;
+    skos:altLabel "Other university"@en, "Other college"@en, "Other tertiary education"@en, "Other higher education institution"@en .
 
 #Other subpurposes
 mvdth:Childcare a skos:Concept, mvdo:TripPurpose ;
