@@ -134,30 +134,30 @@ mvdth:SportsCultureAssociation a skos:Concept, mvdo:TripPurpose ;
 mvdth:LargeRetailShopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Shopping ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by purchasing goods in a large retail store, such as supermarkets"@en ;
     skos:prefLabel "Large retail shopping"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Supermarket"@en, "Hypermarket"@en, "Shopping mall"@en, "Shopping center"@en .
 
 mvdth:SmallMediumRetailShopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Shopping ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by purchasing goods in a small or medium retail store"@en ;
     skos:prefLabel "Small medium retail shopping"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Small shop"@en, "Local shop"@en, "Convenience store"@en .
 
 mvdth:MarketShopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Shopping ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by purchasing goods at open-air, street, or covered market"@en ;
     skos:prefLabel "Market shopping"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Open-air market"@en, "Street market"@en, "Farmer's market"@en, "Flea market"@en .
 
 mvdth:ShoppingMallMultiPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Shopping ;
-    skos:definition ""@en ;
+    skos:definition "Trip to a shopping mall motivated my multiple reasons, combining shopping and leisure such as socializing or eating out"@en ;
     skos:prefLabel "Shopping mall multi purpose"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Mall hangout"@en, "Shopping and entertainment"@en .
 
 #Studying subpurposes
 mvdth:UsualPrimaryEducation a skos:Concept, mvdo:TripPurpose ;
