@@ -36,17 +36,8 @@ mvdo:hasTripPurpose a owl:ObjectProperty ;
     rdfs:label "has trip purpose"@en ;
     rdfs:comment "Links an indicator to thematic attribute of the trip purpose it has been computed with"@en .  
 
-mvdo:hasPopulationProfile a owl:ObjectProperty ;
-    rdfs:domain mvdo:Indicator ;
-    rdfs:range mvdo:PopulationProfile ;
-    rdfs:label "has population profile"@en ;
-    rdfs:comment "Links an indicator to the thematic attribute of the population profile it has been computed with"@en .
-
 mvdo:hasIndicatorType a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
-    #juste :Indicator pour forcer à mettre un indicateur et pas un mode de transport?
-    #spécifiquement pour territory et si c un flux ne pas mettre la propriété?
-    #ça n'a pas d'importance et laisser skos?
     rdfs:range skos:Concept ;
     rdfs:label "has indicator type"@en ;
     rdfs:comment "Links an indicator observation to the conceptual type of indicator it instantiates."@en .
@@ -106,11 +97,6 @@ mvdo:hasDestination a owl:ObjectProperty ;
 mvdo:Theme a owl:Class ;
     rdfs:label "Theme"@en ;
     rdfs:comment "Describes the objects and spatial events according to socio-demographic aspects, activities and trip purposes, and transportation modes"@en .
-
-mvdo:PopulationProfile a owl:Class ;
-    rdfs:subClassOf mvdo:Theme ;
-    rdfs:label "population profile"@en ;
-    rdfs:comment "Thematic attribute that describes the profile characteristics of a group of people associated with an indicator, for instance socio-demographic characteristics."@en .
 
 mvdo:TripPurpose a owl:Class ;
     rdfs:subClassOf mvdo:Theme ;

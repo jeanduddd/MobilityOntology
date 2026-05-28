@@ -160,19 +160,19 @@ mvdth:ShoppingMallMultiPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:altLabel ""@en .
 
 #Studying subpurposes
-mvdth:PrimaryEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:UsualPrimaryEducationUsualPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Primary education usual place"@en ;
+    skos:definition "Trip motivated by attending one's usual primary or elementary education institution"@en ;
+    skos:prefLabel "Usual primary education"@en ;
     skos:altLabel ""@en .
 
-mvdth:MiddleSchoolUsualPlace a skos:Concept, mvdo:TripPurpose ;
+mvdth:UsualMiddleSchool a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Studying ;
-    skos:definition ""@en ;
-    skos:prefLabel "Middle school usual place"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Trip motivated by attending one's usual intermediate school or lower secondary education institution"@en ;
+    skos:prefLabel "Usual middle school"@en ;
+    skos:altLabel "Usual intermediate school"@en, "Usual senior public school"@en, "Usual junior high school"@en, "Usual junior secondary school"@en ,"Usual lower secondary school"@en .
 
 mvdth:HighSchoolUsualPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -369,11 +369,11 @@ mvdth:TaxiPassenger a skos:Concept, mvdo:TransportationMode ;
     skos:altLabel ""@en .
 
 #Public transport submodes
-mvdth:Bus a skos:Concept, mvdo:TransportationMode ;
+mvdth:CityBus a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
-    skos:prefLabel "Bus"@en ;
+    skos:prefLabel "City bus"@en ;
     skos:altLabel ""@en .
 
 mvdth:Tramway a skos:Concept, mvdo:TransportationMode ;
@@ -383,12 +383,12 @@ mvdth:Tramway a skos:Concept, mvdo:TransportationMode ;
     skos:prefLabel "Tramway"@en ;
     skos:altLabel ""@en .
 
-mvdth:Coach a skos:Concept, mvdo:TransportationMode ;
+mvdth:IntercityBus a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:PublicTransport ;
     skos:definition ""@en ;
-    skos:prefLabel "Coach"@en ;
-    skos:altLabel ""@en .
+    skos:prefLabel "Intercity bus"@en ;
+    skos:altLabel "Coach"@en .
 
 mvdth:Train a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -475,13 +475,11 @@ mvdth:MoreOtherModes a skos:Concept, mvdo:TransportationMode ;
     skos:prefLabel "More other modes"@en ;
     skos:altLabel ""@en .
 
-#Population Profile Theme
 
-mvdth:PopulationProfileCollection a skos:Collection ;
-    skos:inScheme mvdth:ThemeScheme ;
-    skos:definition ""@en ;
-    skos:member :blabla ;
-    skos:prefLabel "Population profile collection"@en .
+#enlever driver/passenger
+#ajouter role de passager à la personne et ne pas faire la distinction dans le skos
+#--> passager/conducteur != mode de transport, seul voiture ou taxi (+spécifique)
+
 
 ### Indicator Vocabulary
 
@@ -551,11 +549,11 @@ mvdth:AttributeShare a skos:Concept, mvdo:TerritoryIndicator ;
     skos:prefLabel "Attribute share"@en ;
     skos:altLabel ""@en .
 
-#Flow Indicators ???
+#suppr ActivityShare
 
-# :FlowIndicatorsCollection a skos:Collection ;
-#     skos:inScheme :IndicatorsScheme ;
-#     skos:member :;
-#     skos:prefLabel "Flow indicators collection"@en ;
-#     skos:altLabel ""@en ;
-#     skos:hiddenLabel ""@en .
+#séparer object en 2 --> trip ou movers en focntion de comment l'indicateur a été calculé.
+#créer class Object
+
+#dans skos juste faire Presence, fluctuation et attractiveness
+
+#onto pour les calculs statistiques, pour exprimer les rates --> value numérateur et dénominateur
