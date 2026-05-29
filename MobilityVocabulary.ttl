@@ -220,30 +220,30 @@ mvdth:OtherHigherEducation a skos:Concept, mvdo:TripPurpose ;
 mvdth:Childcare a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by bringing or picking-up a child from a daycare or nursery"@en ;
     skos:prefLabel "Childcare"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Daycare"@en, "Nursery"@en, "Childminder"@en .
 
 mvdth:Healthcare a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by receiving medical care or visiting a healthcare facility"@en ;
     skos:prefLabel "Healthcare"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Medical appointment"@en, "Hospital"@en , "Doctor visit"@en, "Medical reasons"@en .
 
 mvdth:AdministrativeProcedures a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by doing administrative formalities or visiting government offices"@en ;
     skos:prefLabel "Administrative procedures"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Administrative actions"@en, "Administrative processes"@en, "administrative formalities"@en, "Bureaucratic procedures"@en .
 
 mvdth:StrollingAndWindowShopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTripPurpose ;
-    skos:definition ""@en ;
+    skos:definition "Trip motivated by walking, strolling or observing shop windows for recreational purpose, without the intention of bying goods"@en ;
     skos:prefLabel "Strolling and window shopping"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Strolling"@en, "Window shopping"@en, "Taking a walk"@en .
 
 mvdth:AccompanyPersonPresent a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
