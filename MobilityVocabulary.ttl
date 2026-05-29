@@ -63,7 +63,6 @@ mvdth:OtherTripPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:prefLabel "Other Trip Purpose"@en ;
     skos:altLabel "Other reasons"@en, "Other purpose"@en .
 
-
 #Work subpurposes
 mvdth:WorkAtUsualPlace a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -484,54 +483,15 @@ mvdth:TerritorialIndicatorsCollection a skos:Collection ;
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Presence of movers"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Number of movers visiting a spatial location at a specific time unit"@en ;
+    skos:prefLabel "Presence"@en .
 
-mvdth:PresenceByPurpose a skos:Concept, mvdo:TerritoryIndicator ;
+mvdth:Fluctuation a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Presence of movers per activity"@en ;
-    skos:altLabel ""@en .
-
-mvdth:ActivityShare a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Activity share"@en ;
-    skos:altLabel ""@en .
-
-mvdth:PresenceDensity a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Presence density"@en ;
-    skos:altLabel ""@en .
-
-mvdth:FluctuationRate a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Fluctuation rate"@en ;
-    skos:altLabel ""@en .
-
-mvdth:PresenceFluctuation a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Presence fluctuation"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Difference between the count of different movers that visited a spatial location at a specific time unit and the location\'s estimated population size"@en ;
+    skos:prefLabel "Fluctuation"@en .
 
 mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Attractiveness"@en ;
-    skos:altLabel ""@en .
-
-mvdth:MobilityRate a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Mobility rate"@en ;
-    skos:altLabel ""@en .
-
-mvdth:AttributeShare a skos:Concept, mvdo:TerritoryIndicator ;
-    skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
-    skos:prefLabel "Attribute share"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
+    skos:prefLabel "Attractiveness"@en .
