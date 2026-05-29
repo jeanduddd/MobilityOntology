@@ -342,7 +342,7 @@ mvdth:PublicTransportation a skos:Concept, mvdo:TransportationMode ;
 
 mvdth:OtherTransportationMode a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
-    skos:definition "Any vehicle that do not fall into the primary categories, such as cablecars or airplanes "@en ;
+    skos:definition "Any vehicle that do not fall into the primary categories, such as cablecars or airplanes"@en ;
     skos:prefLabel "Other Transportation Mode"@en ;
     skos:altLabel "Other transport mode"@en, "Other mode"@en .
 
@@ -408,65 +408,65 @@ mvdth:MotorizedTwoWheeler a skos:Concept, mvdo:TransportationMode ;
 mvdth:Wheelchair a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "wheeled mobility device that can be manual or eletrically powered, designed to help people who cannot walk or have difficulty walking."@en ;
     skos:prefLabel "Wheelchair"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Manual wheelchair"@en, "Motorized wheelchair"@en, "Electric wheelchair"@en .
 
 mvdth:CableCar a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "Cabin suspended between cables, mostly used to cross difficult terrains such as mountains"@en ;
     skos:prefLabel "Cable car"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Manual wheelchair"@en, "Motorized wheelchair"@en .
 
 mvdth:Airplane a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "Powered flying vehicle, designed for long-distance domestic or international travel through the air"@en ;
     skos:prefLabel "Airplane"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Plane"@en, "Aircraft"@en, "Aeroplane"@en, "Air travel"@en, "Flight"@en .
 
 mvdth:SchoolTransportation a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "Any kind of transportation mode used to pick up people and take them to their place of study"@en ;
     skos:prefLabel "School transportation"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "School bus"@en, "Student transportation"@en .
 
 mvdth:WaterTransportation a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "Any kind of vehicle design to carry passengers on water, whether it is on a river, a lake or a sea"@en ;
     skos:prefLabel "Water transportation"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Boat"@en, "Ship"@en, "Ferry"@en, "Water taxi"@en, "Hovercraft"@en, "Sailboat"@en .
 
-mvdth:EmployerSponsoredTransport a skos:Concept, mvdo:TransportationMode ;
+mvdth:EmployerSponsoredTransportation a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
-    skos:prefLabel "Employer sponsored transport"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Any kind of transportation mode provided by an employer for the transportation of its employees"@en ;
+    skos:prefLabel "Employer sponsored transportation"@en ;
+    skos:altLabel "Company car"@en, "Employer shuttle"@en .
 
 mvdth:TruckVan a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
+    skos:definition "Large motorized vehicle with only a few passenger seats, designed to carry goods, equipment or materials, ranging from light vans to heavy trucks. Can be used for professional or personal reasons"@en ;
     skos:prefLabel "Truck van"@en ;
-    skos:altLabel ""@en .
+    skos:altLabel "Truck"@en, "Van"@en, "Delivery van"@en, "Commercial vehicle"@en .
 
-mvdth:OtherWheeledTransportationMode a skos:Concept, mvdo:TransportationMode ;
+mvdth:PersonalMobilityDevice a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
-    skos:prefLabel "Other wheeled transportation mode"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Any kind of small wheeled device, either human-powered or electrically powered, designed to carry a single person"@en ;
+    skos:prefLabel "Personal mobility device"@en ;
+    skos:altLabel "skateboard"@en, "Scooter"@en, "Electric scooter"@en, "Rollerblade"@en, "Roller skate"@en, "Segway"@en .
 
-mvdth:MoreOtherModes a skos:Concept, mvdo:TransportationMode ;
+mvdth:VariousOtherModes a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition ""@en ;
-    skos:prefLabel "More other modes"@en ;
-    skos:altLabel ""@en .
+    skos:definition "Any vehicle that do not fall into the predefined categories, such as agricultural, construction or not listed vehicles"@en ;
+    skos:prefLabel "Various other modes"@en ;
+    skos:altLabel "Tractor"@en, "Agricultural vehicle"@en, "Unspecified mode"@en .
 
 ### Indicator Vocabulary
 
