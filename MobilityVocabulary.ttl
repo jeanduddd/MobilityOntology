@@ -535,12 +535,3 @@ mvdth:AttributeShare a skos:Concept, mvdo:TerritoryIndicator ;
     skos:definition ""@en ;
     skos:prefLabel "Attribute share"@en ;
     skos:altLabel ""@en .
-
-#suppr ActivityShare
-
-#séparer object en 2 --> trip ou movers en focntion de comment l'indicateur a été calculé.
-#créer class Object
-
-#dans skos juste faire Presence, fluctuation et attractiveness
-
-#onto pour les calculs statistiques, pour exprimer les rates --> value numérateur et dénominateur
