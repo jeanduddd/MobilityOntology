@@ -84,7 +84,7 @@ mvdth:Jobseeker a skos:Concept, mvdo:TripPurpose ;
     skos:broader mvdth:Work ;
     skos:definition "Trip motivated by the search of an employment, such as job interviews or visiting employment agencies"@en ;
     skos:prefLabel "Jobseeker"@en ;
-    skos:altLabel "Job interview"@en, "Job search"@en, "visit employment agency" .
+    skos:altLabel "Job interview"@en, "Job search"@en, "Visit employment agency" .
 
 mvdth:ProfessionalTour a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -236,7 +236,7 @@ mvdth:AdministrativeProcedures a skos:Concept, mvdo:TripPurpose ;
     skos:broader mvdth:OtherTripPurpose ;
     skos:definition "Trip motivated by doing administrative formalities or visiting government offices"@en ;
     skos:prefLabel "Administrative procedures"@en ;
-    skos:altLabel "Administrative actions"@en, "Administrative processes"@en, "administrative formalities"@en, "Bureaucratic procedures"@en .
+    skos:altLabel "Administrative actions"@en, "Administrative processes"@en, "Administrative formalities"@en, "Bureaucratic procedures"@en .
 
 mvdth:StrollingAndWindowShopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -320,7 +320,7 @@ mvdth:Walk a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:definition "Displacement made on foot"@en ;
     skos:prefLabel "Walk"@en ;
-    skos:altLabel "Walking"@en, "Pedestrian"@en .
+    skos:altLabel "Walking"@en .
 
 mvdth:Bike a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -396,19 +396,19 @@ mvdth:LightMotorizedTwoWheeler a skos:Concept, mvdo:TransportationMode ;
     skos:broader mvdth:OtherTransportationMode ;
     skos:definition "Motorized two-wheeled vehicle with engine displacement lower than 50 cm³"@en ;
     skos:prefLabel "Light motorized two wheeler"@en ;
-    skos:altLabel "two wheels < 50 cm³"@en .
+    skos:altLabel "Two wheels < 50 cm³"@en .
 
 mvdth:MotorizedTwoWheeler a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
     skos:definition "Motorized two-wheeled vehicle with engine displacement greater than or equal to 50 cm³"@en ;
     skos:prefLabel "Motorized two wheeler"@en ;
-    skos:altLabel "two wheels ≥ 50 cm³"@en .
+    skos:altLabel "Two wheels ≥ 50 cm³"@en .
 
 mvdth:Wheelchair a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:OtherTransportationMode ;
-    skos:definition "wheeled mobility device that can be manual or eletrically powered, designed to help people who cannot walk or have difficulty walking."@en ;
+    skos:definition "Wheeled mobility device that can be manual or eletrically powered, designed to help people who cannot walk or have difficulty walking."@en ;
     skos:prefLabel "Wheelchair"@en ;
     skos:altLabel "Manual wheelchair"@en, "Motorized wheelchair"@en, "Electric wheelchair"@en .
 
@@ -459,7 +459,7 @@ mvdth:PersonalMobilityDevice a skos:Concept, mvdo:TransportationMode ;
     skos:broader mvdth:OtherTransportationMode ;
     skos:definition "Any kind of small wheeled device, either human-powered or electrically powered, designed to carry a single person"@en ;
     skos:prefLabel "Personal mobility device"@en ;
-    skos:altLabel "skateboard"@en, "Scooter"@en, "Electric scooter"@en, "Rollerblade"@en, "Roller skate"@en, "Segway"@en .
+    skos:altLabel "Skateboard"@en, "Scooter"@en, "Electric scooter"@en, "Rollerblade"@en, "Roller skate"@en, "Segway"@en .
 
 mvdth:VariousOtherModes a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
