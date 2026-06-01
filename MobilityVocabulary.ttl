@@ -11,12 +11,10 @@ mvdth: a skos:ConceptScheme ;
     owl:versionInfo "1.0" ;
     owl:imports mvdo: .
 
-###TODO implement labels and defs
-
 ### Theme Vocabulary
 
 mvdth:ThemeScheme a skos:ConceptScheme;
-    skos:definition "Global concept scheme englobing every concepts and collections that describes the objects and spatial events, like transportation mode, socio-demographic aspects or trip purposes"@en ;
+    skos:definition "Global concept scheme englobing every concepts and collections that describe objects and spatial events, such as transportation mode or trip purposes"@en ;
     skos:prefLabel "Global theme vocabulary"@en .
 
 #Trip Purpose Theme
@@ -118,9 +116,9 @@ mvdth:EatingOut a skos:Concept, mvdo:TripPurpose ;
 mvdth:SocialVisit a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:broader mvdth:Leisure ;
-    skos:definition "Trip motivated by visiting, sociolizing a person such as friends or relatives"@en ;
+    skos:definition "Trip motivated by socializing, visiting a person such as friends or relatives"@en ;
     skos:prefLabel "Social visit"@en ;
-    skos:altLabel "Visit parent"@en, "Visit friend"@en, "Sociolizing"@en, "Visit family"@en, "Visiting relatives"@en .
+    skos:altLabel "Visit parent"@en, "Visit friend"@en, "Socializing"@en, "Visit family"@en, "Visiting relatives"@en .
 
 mvdth:SportsCultureAssociation a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
@@ -470,7 +468,7 @@ mvdth:VariousOtherModes a skos:Concept, mvdo:TransportationMode ;
 ### Indicator Vocabulary
 
 mvdth:IndicatorsScheme a skos:ConceptScheme;
-    skos:definition ""@en;
+    skos:definition "Global concept scheme englobing every concepts and collections that describe statistical indicators"@en;
     skos:prefLabel "Global indicator vocabulary"@en .
 
 #Territorial Indicators
@@ -478,20 +476,20 @@ mvdth:IndicatorsScheme a skos:ConceptScheme;
 mvdth:TerritorialIndicatorsCollection a skos:Collection ;
     skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition "A collection grouping every concepts related to territorial indicators"@en;
-    skos:member mvdth:PresenceOfMovers, mvdth:PresenceOfMoversPerActivity, mvdth:ActivityShare, mvdth:PresenceDensity, mvdth:FluctuationRate, mvdth:PresenceFluctuation, mvdth:Attractiveness, mvdth:MobilityRate, mvdth:AttributeShare ;
+    skos:member mvdth:Presence, mvdth:Fluctuation, mvdth:Attractiveness ;
     skos:prefLabel "Territorial indicators collection"@en .
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Number of movers visiting a spatial location at a specific time unit"@en ;
+    skos:definition "Territorial indicator measuring the count of different movers that visited a spatial location at a specific time unit"@en ;
     skos:prefLabel "Presence"@en .
 
 mvdth:Fluctuation a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Difference between the count of different movers that visited a spatial location at a specific time unit and the location\'s estimated population size"@en ;
+    skos:definition "Territorial indicator measuring the difference between the count of different movers that visited a spatial location at a specific time unit and the location\'s estimated population size"@en ;
     skos:prefLabel "Fluctuation"@en .
 
 mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
+    skos:definition "Territorial indicator measuring the aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
     skos:prefLabel "Attractiveness"@en .
