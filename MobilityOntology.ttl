@@ -81,16 +81,16 @@ mvdo:TravelFlow a owl:Class ;
     rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
 
 mvdo:hasOrigin a owl:ObjectProperty ;
-    rdfs:domain mvdo:FlowIndicator ;
+    rdfs:domain mvdo:TravelFlow ;
     rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
-    rdfs:comment "Links a flow indicator to its origin"@en .
+    rdfs:comment "Links a flow to its origin"@en .
 
 mvdo:hasDestination a owl:ObjectProperty ;
-    rdfs:domain mvdo:FlowIndicator ;
+    rdfs:domain mvdo:TravelFlow ;
     rdfs:range mvdo:Space ;
-    rdfs:label "has description"@en ;
-    rdfs:comment "Links a flow indicator to its destination"@en .
+    rdfs:label "has destination"@en ;
+    rdfs:comment "Links a flow to its destination"@en .
 
 ### Theme
 
