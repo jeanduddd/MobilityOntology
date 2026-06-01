@@ -481,7 +481,7 @@ mvdth:TerritorialIndicatorsCollection a skos:Collection ;
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Territorial indicator measuring the count of different movers that visited a spatial location at a specific time unit"@en ;
+    skos:definition "Territorial indicator measuring the count of different movers that visited a spatial location or trips directed towards a spatial location at a specific time unit"@en ;
     skos:prefLabel "Presence"@en .
 
 mvdth:Fluctuation a skos:Concept, mvdo:TerritoryIndicator ;
