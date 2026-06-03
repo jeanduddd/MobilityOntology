@@ -6,7 +6,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix qudt: <http://qudt.org/schema/qudt> .
 @prefix mvdo: <http://ns.inria.fr/movida/ontology> .
 
 mvdo: a owl:Ontology ;
@@ -58,12 +58,27 @@ mvdo:hasObject a owl:ObjectProperty ;
 # Use time:hasDuration from OWL Time to link a time interval to a Duration
 # Use time:numericalDuration from OWL Time to link a Duration to its numerical value
 
-# And use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
+# Use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
 mvdo:hasTimeInterval a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
     rdfs:comment "Links an indicator to the temporal extent it was computed"@en .
+
+# Use qudt:hasNumeratorPart from QUDT to link a quantity to the value of its numerator. It can be anything such as a Literal or an integer
+# Use qudt:hasDenominatorPart from QUDT to link a quantity to the value of its denominator. It can be anything such as a Literal or an integer
+# Use qudt:value from QUDT to link a quantity to its decimal value
+mvdo:hasRate a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range qudt:Quantity ;
+    rdfs:label "has rate"@en ;
+    rdfs:comment "Links an indicator describing a rate or a share to its corresponding ratio description"@en .
+
+mvdo:hasCount a owl:DatatypeProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range xsd:decimal;
+    rdfs:label "has count"@en ;
+    rdfs:comment "Links an indicator describing a count to its corresponding value"@en .
 
 #Territory Indicator
 
@@ -107,7 +122,6 @@ mvdo:Trips a owl:Class ;
     rdfs:subClassOf mvdo:Object ;
     rdfs:label "Trips"@en ;
     rdfs:comment "An abstract entity with an origin to a destination, whose destination count serves as the basis for calculating territorial indicators related to travel volume or mobility rates"@en .
-
 
 mvdo:Movers a owl:Class ;
     rdfs:subClassOf mvdo:Object ;
