@@ -17,7 +17,7 @@ mvdo: a owl:Ontology ;
 ### Indicators
 
 # General Indicator
-# Use rdfs:value from RDF Schema to link an indicator to its value
+
 # Use prov:wasDerivedFrom from PROV ontology to link the indicator to the indicator from which it was derived
 mvdo:Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity ;
@@ -185,6 +185,7 @@ mvdo:hasPopulation a owl:DatatypeProperty ;
     rdfs:comment "Links a spatial location to its number of residents"@en .
 
 ### Territorial partition
+
 mvdo:TerritorialPartition a owl:Class ;
     rdfs:label "Territorial Partition"@en ;
     rdfs:comment "A class used to describe the spatial granularity"@en .
