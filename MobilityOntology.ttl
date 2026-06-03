@@ -6,7 +6,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix qudt: <http://qudt.org/schema/qudt> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix mvdo: <http://ns.inria.fr/movida/ontology> .
 
 mvdo: a owl:Ontology ;
