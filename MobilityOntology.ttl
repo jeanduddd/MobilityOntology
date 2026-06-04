@@ -87,12 +87,6 @@ mvdo:TerritoryIndicator a owl:Class ;
     rdfs:label "Territory indicator"@en ;
     rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
 
-mvdo:hasSpatialLocation a owl:ObjectProperty ;
-    rdfs:domain mvdo:TerritoryIndicator ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has spatial location"@en ;
-    rdfs:comment "Links a territory indicator to the location it describes"@en .
-
 #Travel Flow
 
 mvdo:TravelFlow a owl:Class ;
@@ -100,17 +94,34 @@ mvdo:TravelFlow a owl:Class ;
     rdfs:label "Travel flow"@en ;
     rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
 
+#Spatial links properties
+
+mvdo:hasSpatialLocation a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has spatial location"@en ;
+    rdfs:comment "Superclass to link any kind of indicator to the spatial location it describes"@en .
+
+mvdo:hasReferenceArea a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
+    rdfs:domain mvdo:TerritoryIndicator ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has reference area"@en ;
+    rdfs:comment "Links a territory indicator to the location it describes"@en .
+
 mvdo:hasOrigin a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:TravelFlow ;
     rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
-    rdfs:comment "Links a flow to its origin"@en .
+    rdfs:comment "Links a flow to its origin location"@en .
 
 mvdo:hasDestination a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:TravelFlow ;
     rdfs:range mvdo:Space ;
     rdfs:label "has destination"@en ;
-    rdfs:comment "Links a flow to its destination"@en .
+    rdfs:comment "Links a flow to its destination location"@en .
 
 ### Object
 
