@@ -166,12 +166,6 @@ mvdo:isPartOf a owl:ObjectProperty ;
     rdfs:label "is part of"@en ;
     rdfs:comment "Links a spatial location to the one that surrounds it"@en .
 
-mvdo:hasTerritorialPartition a owl:ObjectProperty ;
-    rdfs:domain mvdo:Space ;
-    rdfs:range mvdo:TerritorialPartition ;
-    rdfs:label "has territorial partition"@en ;
-    rdfs:comment "Links a spatial location to the description of the territorial partition used for the indicator"@en .
-
 mvdo:hasID a owl:DatatypeProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range xsd:integer ;
@@ -207,3 +201,9 @@ mvdo:hasParts a owl:DatatypeProperty ;
     rdfs:range xsd:integer ;
     rdfs:label "has parts"@en ;
     rdfs:comment "Links a territorial partition to the number of spatial location it contains"@en .
+
+mvdo:containsSpace a owl:ObjectProperty ;
+    rdfs:domain mvdo:TerritorialPartition ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "contains space"@en ;
+    rdfs:comment "Links a territorial partition to the locations it contains"@en .
