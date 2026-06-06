@@ -43,7 +43,7 @@ mvdo:hasIndicatorType a owl:ObjectProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range skos:Concept ;
     rdfs:label "has indicator type"@en ;
-    rdfs:comment "Links an indicator observation to the conceptual type of indicator it instantiates."@en .
+    rdfs:comment "Links an indicator to the conceptual type of indicator it instantiates."@en .
 
 mvdo:hasObject a owl:ObjectProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
@@ -64,20 +64,19 @@ mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range mvdo:TerritorialPartition ;
     rdfs:label "has territorial partition" ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator to the territorial partition's characteristics when the space is not aggregated"@en .
 
 mvdo:hasSpaceAggregation a owl:DatatypeProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range xsd:Literal ;
     rdfs:label "has space aggregation" ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
 
 mvdo:hasTimeAggregation a owl:DatatypeProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range xsd:Literal ;
     rdfs:label "has time aggregation" ;
-    rdfs:comment ""@en .
-
+    rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
 
 #Indicator Record
 
@@ -85,14 +84,14 @@ mvdo:hasTimeAggregation a owl:DatatypeProperty ;
 mvdo:IndicatorRecord a owl:Class ; #IndicatorValue...?
     rdfs:subclassOf sosa:Observation ;
     rdfs:label "Indicator record" ;
-    rdfs:comment ""@en .
+    rdfs:comment "A specific data point representing the calculated value of a General Indicator for a given spatial context and time interval."@en .
 
 mvdo:isRecordOf a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:observedProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:GeneralIndicator ;
     rdfs:label "is record of" ;
-    rdfs:comment ""@en .
+    rdfs:comment "Links an indicator record to the abstract general indicator that it evaluates"@en .
 
 #Spatial links properties
 
@@ -101,40 +100,40 @@ mvdo:hasSpatialLocation a owl:ObjectProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has spatial location"@en ;
-    rdfs:comment "Superclass to link any kind of indicator to the spatial location it describes"@en .
+    rdfs:comment "Superclass to link any kind of indicator record to the spatial location it describes"@en .
 
 mvdo:hasReferenceArea a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has reference area"@en ;
-    rdfs:comment "Links a territory indicator to the location it describes"@en .
+    rdfs:comment "Links a territory indicator record to the location it describes"@en .
 
 mvdo:hasOrigin a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
-    rdfs:comment "Links a flow to its origin location"@en .
+    rdfs:comment "Links a flow record to its origin location"@en .
 
 mvdo:hasDestination a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has destination"@en ;
-    rdfs:comment "Links a flow to its destination location"@en .
+    rdfs:comment "Links a flow record to its destination location"@en .
 
 mvdo:hasTransportationMode a owl:ObjectProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:TransportationMode ;
     rdfs:label "has transportation mode"@en ;
-    rdfs:comment "Links an indicator to the thematic attribute of the transportation mode it has been computed with"@en .
+    rdfs:comment "Links an indicator record to the thematic attribute of the transportation mode it has been computed with"@en .
 
 mvdo:hasTripPurpose a owl:ObjectProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range mvdo:TripPurpose ;
     rdfs:label "has trip purpose"@en ;
-    rdfs:comment "Links an indicator to the thematic attribute of the trip purpose it has been computed with"@en .  
+    rdfs:comment "Links an indicator record to the thematic attribute of the trip purpose it has been computed with"@en .  
 
 # Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
 # Use time:hasEnd from OWL Time to add an end time instant to the time interval
@@ -152,7 +151,7 @@ mvdo:hasTimeInterval a owl:ObjectProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
-    rdfs:comment "Links an indicator to the temporal extent it was computed"@en .
+    rdfs:comment "Links an indicator record to the temporal extent it was computed"@en .
 
 ###Space
 
@@ -162,6 +161,7 @@ mvdo:Space a owl:Class ;
     rdfs:subClassOf geo:Feature, sosa:FeatureOfInterest ;
     rdfs:label "Space"@en ;
     rdfs:comment "A class used to describe a spatial location"@en .
+
 mvdo:isPartOf a owl:ObjectProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range mvdo:Space ;
@@ -243,4 +243,3 @@ mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:comment "Links a territorial partition to the locations it contains"@en .
 
 #TODO rajouter prop thématic attrib
-#Revise defs
