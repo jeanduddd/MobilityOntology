@@ -82,7 +82,7 @@ mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range skos:Concept ;
     rdfs:label "has thematic attribute" ;
-    rdfs:comment "Links an indicator to the thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
+    rdfs:comment "Links an indicator to the conceptual thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
 
 #Indicator Record
 
