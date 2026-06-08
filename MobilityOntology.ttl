@@ -87,7 +87,7 @@ mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
 #Indicator Record
 
 # Use sosa:hasSimpleResult from SOSA ontology to link an indicator record to its value
-mvdo:IndicatorRecord a owl:Class ; #IndicatorValue...?
+mvdo:IndicatorRecord a owl:Class ;
     rdfs:subclassOf sosa:Observation ;
     rdfs:label "Indicator record" ;
     rdfs:comment "A specific data point representing the calculated value of a General Indicator for a given spatial context and time interval."@en .
@@ -246,5 +246,3 @@ mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:range mvdo:Space ;
     rdfs:label "contains space"@en ;
     rdfs:comment "Links a territorial partition to the locations it contains"@en .
-
-#TODO rajouter prop thématic attrib
