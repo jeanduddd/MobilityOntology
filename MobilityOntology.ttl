@@ -163,7 +163,7 @@ mvdo:hasDestination a owl:ObjectProperty ;
 # Use geo:hasGeometry from GeoSPARQL ontology to link the geographic area to its geometry
 # Use geo:hasMetricArea from GeoSPARQL ontology to link the geographic area to its area in m²
 mvdo:Space a owl:Class ;
-    rdfs:subClassOf geo:Feature, sosa:FeatureOfInterest ;
+    rdfs:subClassOf geo:Feature ;
     rdfs:label "Space"@en ;
     rdfs:comment "A class used to describe a spatial location"@en .
 
