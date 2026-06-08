@@ -8,7 +8,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix mvdo: <http://ns.inria.fr/movida/ontology> .
+@prefix mvdo: <http://ns.inria.fr/movida/ontology#> .
 
 mvdo: a owl:Ontology ;
     rdfs:label "Mobility Ontology" ;
