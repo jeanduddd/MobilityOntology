@@ -66,21 +66,21 @@ mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:label "has territorial partition" ;
     rdfs:comment "Links an indicator to the territorial partition's characteristics when the space is not aggregated"@en .
 
-mvdo:hasSpaceAggregation a owl:DatatypeProperty ;
+mvdo:hasSpatialGranularity a owl:DatatypeProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range xsd:Literal ;
     rdfs:label "has space aggregation" ;
     rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
 
-mvdo:hasTimeAggregation a owl:DatatypeProperty ;
+mvdo:hasTimeGranularity a owl:DatatypeProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
     rdfs:range xsd:Literal ;
     rdfs:label "has time aggregation" ;
     rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
 
-mvdo:hasThematicAttribute a owl:ObjectProperty ;
+mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
     rdfs:domain mvdo:GeneralIndicator ;
-    rdfs:range mvdo:Theme ;
+    rdfs:range skos:Concept ;
     rdfs:label "has thematic attribute" ;
     rdfs:comment "Links an indicator to the thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
 
