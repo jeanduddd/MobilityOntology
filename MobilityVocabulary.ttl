@@ -14,49 +14,56 @@ mvdth: a skos:ConceptScheme ;
 ### Theme Vocabulary
 
 mvdth:ThemeScheme a skos:ConceptScheme;
+    skos:hasTopConcept mvdth:TripPurpose, mvdth:TransportationMode ;
     skos:definition "Global concept scheme englobing every concepts and collections that describe objects and spatial events, such as transportation mode or trip purposes"@en ;
     skos:prefLabel "Global theme vocabulary"@en .
 
 #Trip Purpose Theme
 
-mvdth:TripPurposeCollection a skos:Collection ;
-    skos:inScheme mvdth:ThemeScheme ;
-    skos:definition "A collection grouping every concepts related to the main reason for making a trip"@en ;
-    skos:member :Work, mvdth:Home, mvdth:Studying, mvdth:Shopping, mvdth:Leisure, mvdth:OtherTripPurpose ;
-    skos:prefLabel "Trip purpose collection"@en .
+mvdth:TripPurpose a skos:Concept, mvdo:TripPurpose ;
+    skos:inScheme mvdth:ThemeScheme;
+    skos:topConceptOf mvdth:ThemeScheme ;
+    skos:definition "Parent concept of every concepts related to the main reason for making a trip"@en ;
+    skos:prefLabel "Trip purpose"@en .
 
 mvdth:Work a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by professional activities or employment"@en ;
     skos:prefLabel "Work"@en ;
     skos:altLabel "Job"@en, "Employment"@en, "Working"@en .
 
 mvdth:Home a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by returning to the place of residence"@en ;
     skos:prefLabel "Home"@en ;
     skos:altLabel "Residence"@en, "House"@en, "Return home"@en .
     
 mvdth:Studying a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by attending education place such as school or universities"@en ;
     skos:prefLabel "Studying"@en ;
     skos:altLabel "Studies"@en, "School"@en, "Education"@en.
 
 mvdth:Shopping a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by the purchase of goods or groceries in retail environments"@en ;
     skos:prefLabel "Shopping"@en ;
     skos:altLabel "Purchase"@en, "Purchasing"@en, "To shop"@en .
 
 mvdth:Leisure a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by doing a free-time, recreational activity"@en ;
     skos:prefLabel "Leisure"@en ;
     skos:altLabel "Activity"@en, "Recreation"@en, "Free time"@en .
 
 mvdth:OtherTripPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TripPurpose ;
     skos:definition "Trip motivated by reasons that do not fall into the primary categories, such as escorting others."@en ;
     skos:prefLabel "Other Trip Purpose"@en ;
     skos:altLabel "Other reasons"@en, "Other purpose"@en .
@@ -307,38 +314,43 @@ mvdth:OtherPurposeNotListed a skos:Concept, mvdo:TripPurpose ;
 
 #Transportation Mode Theme
 
-mvdth:TransportationModeCollection a skos:Collection ;
-    skos:inScheme mvdth:ThemeScheme ;
-    skos:definition "A collection grouping every concepts related to any kind of vehicle or methode used for a trip"@en ;
-    skos:member mvdth:Walk, mvdth:Bike, mvdth:Car, mvdth:PublicTransport, mvdth:OtherTransportationMode ;
-    skos:prefLabel "Transportation mode collection"@en .
+mvdth:TransportationMode a skos:Concept, mvdo:TransportationMode ;
+    skos:inScheme mvdth:ThemeScheme;
+    skos:topConceptOf mvdth:ThemeScheme ;
+    skos:definition "Parent concept of every concepts related to any kind of vehicle or methode used for a trip"@en ;
+    skos:prefLabel "Transportation mode"@en .
 
 mvdth:Walk a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TransportationMode ;
     skos:definition "Displacement made on foot"@en ;
     skos:prefLabel "Walk"@en ;
     skos:altLabel "Walking"@en .
 
 mvdth:Bike a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TransportationMode ;
     skos:definition "Unmotorized or electrically assisted pedal-driven vehicle, most of the time on two wheels"@en ;
     skos:prefLabel "Bike"@en ;
     skos:altLabel "Bicycle"@en, "Cycling"@en .
 
 mvdth:Car a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TransportationMode ;
     skos:definition "Motorized wheeled vehicle designed to transport a small amount of passengers on roads"@en ;
     skos:prefLabel "Car"@en ;
     skos:altLabel "Automobile"@en, "SUV"@en, "4x4"@en .
 
 mvdth:PublicTransportation a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TransportationMode ;
     skos:definition "Shared transportation mode used as a passenger, available to everyone and working on lines and schedules, with a high passenger capacity, such as trains, trams, buses"@en ;
     skos:prefLabel "Public Transportation"@en ;
     skos:altLabel "PTS"@en, "Public Transport"@en .
 
 mvdth:OtherTransportationMode a skos:Concept, mvdo:TransportationMode ;
     skos:inScheme mvdth:ThemeScheme ;
+    skos:broader mvdth:TransportationMode ;
     skos:definition "Any vehicle that do not fall into the primary categories, such as cablecars or airplanes"@en ;
     skos:prefLabel "Other Transportation Mode"@en ;
     skos:altLabel "Other transport mode"@en, "Other mode"@en .
