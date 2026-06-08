@@ -78,6 +78,12 @@ mvdo:hasTimeAggregation a owl:DatatypeProperty ;
     rdfs:label "has time aggregation" ;
     rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
 
+mvdo:hasThematicAttribute a owl:ObjectProperty ;
+    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:range mvdo:Theme ;
+    rdfs:label "has thematic attribute" ;
+    rdfs:comment "Links an indicator to the thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
+
 #Indicator Record
 
 # Use sosa:hasSimpleResult from SOSA ontology to link an indicator record to its value
@@ -92,36 +98,6 @@ mvdo:isRecordOf a owl:ObjectProperty ;
     rdfs:range mvdo:GeneralIndicator ;
     rdfs:label "is record of" ;
     rdfs:comment "Links an indicator record to the abstract general indicator that it evaluates"@en .
-
-#Spatial links properties
-
-mvdo:hasSpatialLocation a owl:ObjectProperty ;
-    rdfs:subPropertyOf sosa:hasFeatureOfInterest ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has spatial location"@en ;
-    rdfs:comment "Superclass to link any kind of indicator record to the spatial location it describes"@en .
-
-mvdo:hasReferenceArea a owl:ObjectProperty ;
-    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has reference area"@en ;
-    rdfs:comment "Links a territory indicator record to the location it describes"@en .
-
-mvdo:hasOrigin a owl:ObjectProperty ;
-    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has origin"@en ;
-    rdfs:comment "Links a flow record to its origin location"@en .
-
-mvdo:hasDestination a owl:ObjectProperty ;
-    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has destination"@en ;
-    rdfs:comment "Links a flow record to its destination location"@en .
 
 mvdo:hasTransportationMode a owl:ObjectProperty ;
     rdfs:domain mvdo:IndicatorRecord ;
@@ -152,6 +128,35 @@ mvdo:hasTimeInterval a owl:ObjectProperty ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
     rdfs:comment "Links an indicator record to the temporal extent it was computed"@en .
+
+#Spatial links properties
+
+mvdo:hasSpatialLocation a owl:ObjectProperty ;
+    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has spatial location"@en ;
+    rdfs:comment "Superclass to link any kind of indicator record to the spatial location it describes"@en .
+
+mvdo:hasReferenceArea a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
+    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has reference area"@en ;
+    rdfs:comment "Links a territory indicator record to the location it describes"@en .
+
+mvdo:hasOrigin a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
+    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has origin"@en ;
+    rdfs:comment "Links a flow record to its origin location"@en .
+
+mvdo:hasDestination a owl:ObjectProperty ;
+    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
+    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:range mvdo:Space ;
+    rdfs:label "has destination"@en ;
+    rdfs:comment "Links a flow record to its destination location"@en .
 
 ###Space
 
