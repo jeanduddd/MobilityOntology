@@ -493,7 +493,7 @@ mvdth:TerritoryIndicatorsCollection a skos:Collection ;
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Territory indicator measuring the count of different movers that visited a spatial location or trips directed towards a spatial location at a specific time unit"@en ;
+    skos:definition "Territory indicator measuring the count of different movers that visited a spatial location at a specific time unit"@en ;
     skos:prefLabel "Presence"@en .
 
 mvdth:Fluctuation a skos:Concept, mvdo:TerritoryIndicator ;
@@ -510,23 +510,23 @@ mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
 
 mvdth:MovementIndicatorsCollection a skos:Collection ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
+    skos:definition "A collection grouping every concepts related to movement indicators"@en ;
     skos:member mvdth:TravelFlow, mvdth:MobilityRate, mvdth:AttributeShare ;
     skos:prefLabel "Movement indicators collection" .
 
 mvdth:TravelFlow a skos:Concept, mvdo:MovementIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
+    skos:definition "Movement indicator measuring the flow magnitude between two locations"@en ;
     skos:prefLabel "Travel flow"@en .
 
 mvdth:MobilityRate a skos:Concept, mvdo:MovementIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
+    skos:definition "Movement indicator measuring the count of trips made to a spatial location at a specific time unit, divided by the same counting aggregate over 24 hours"@en ;
     skos:prefLabel "Mobility rate"@en .
 
 mvdth:AttributeShare a skos:Concept, mvdo:MovementIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition ""@en ;
+    skos:definition "Movement indicator measuring the count of trips made to a spatial location at a specific time unit for each thematic attribute, divided by the total count of trips having the same spatial location as destination and time unit"@en ;
     skos:prefLabel "Attribute share"@en .
 
 ### Object Vocabulary

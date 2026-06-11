@@ -30,14 +30,16 @@ mvdo:Indicator a owl:Class ;
 mvdo:TerritoryIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Territory indicator"@en ;
-    rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
+    rdfs:comment "Statistical indicator describing a mobility phenomenon, such as presence, fluctuation, or attractiveness, within a defined spatial location"@en .
 
 #Movement Indicator
 
 mvdo:MovementIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Movement indicator"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "Statistical indicator describing the physical displacement of entities, such as trips or flows"@en .
+
+#Indicator properties
 
 mvdo:hasIndicatorType a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
