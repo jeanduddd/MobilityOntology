@@ -483,28 +483,51 @@ mvdth:IndicatorsScheme a skos:ConceptScheme ;
     skos:definition "Global concept scheme englobing every concepts and collections that describe statistical indicators"@en ;
     skos:prefLabel "Global indicator vocabulary"@en .
 
-#Territorial Indicators
+#Territory Indicators
 
-mvdth:TerritorialIndicatorsCollection a skos:Collection ;
+mvdth:TerritoryIndicatorsCollection a skos:Collection ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "A collection grouping every concepts related to territorial indicators"@en ;
+    skos:definition "A collection grouping every concepts related to territory indicators"@en ;
     skos:member mvdth:Presence, mvdth:Fluctuation, mvdth:Attractiveness ;
-    skos:prefLabel "Territorial indicators collection"@en .
+    skos:prefLabel "Territory indicators collection"@en .
 
 mvdth:Presence a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Territorial indicator measuring the count of different movers that visited a spatial location or trips directed towards a spatial location at a specific time unit"@en ;
+    skos:definition "Territory indicator measuring the count of different movers that visited a spatial location or trips directed towards a spatial location at a specific time unit"@en ;
     skos:prefLabel "Presence"@en .
 
 mvdth:Fluctuation a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Territorial indicator measuring the difference between the count of different movers that visited a spatial location at a specific time unit and the location\'s estimated population size"@en ;
+    skos:definition "Territory indicator measuring the difference between the count of different movers that visited a spatial location at a specific time unit and the location\'s estimated population size"@en ;
     skos:prefLabel "Fluctuation"@en .
 
 mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "Territorial indicator measuring the aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
+    skos:definition "Territory indicator measuring the aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
     skos:prefLabel "Attractiveness"@en .
+
+#Movement Indicators
+
+mvdth:MovementIndicatorsCollection a skos:Collection ;
+    skos:inScheme mvdth:IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:member mvdth:TravelFlow, mvdth:MobilityRate, mvdth:AttributeShare ;
+    skos:prefLabel "Movement indicators collection" .
+
+mvdth:TravelFlow a skos:Concept, mvdo:MovementIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Travel flow"@en .
+
+mvdth:MobilityRate a skos:Concept, mvdo:MovementIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Mobility rate"@en .
+
+mvdth:AttributeShare a skos:Concept, mvdo:MovementIndicator ;
+    skos:inScheme mvdth:IndicatorsScheme ;
+    skos:definition ""@en ;
+    skos:prefLabel "Attribute share"@en .
 
 ### Object Vocabulary
 
@@ -522,12 +545,10 @@ mvdth:ObjectsCollection a skos:Collection ;
 
 mvdth:Movers a skos:Concept, mvdo:Object ;
     skos:inScheme mvdth:ObjectsScheme ;
-    skos:definition "A physical entity, whose count within a spatial location serves as the basis for calculating territorial indicators related to human presence, density, or fluctuation"@en ;
+    skos:definition "A physical entity, whose count within a spatial location serves as the basis for calculating territory indicators related to human presence, density, or fluctuation"@en ;
     skos:prefLabel "Movers"@en .
 
 mvdth:Trips a skos:Concept, mvdo:Object ;
     skos:inScheme mvdth:ObjectsScheme ;
     skos:definition "An abstract entity with an origin to a destination, whose destination count serves as the basis for calculating movement indicators related to travel volume or mobility rates"@en ;
     skos:prefLabel "Trips"@en .
-
-#

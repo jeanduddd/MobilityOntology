@@ -27,18 +27,17 @@ mvdo:Indicator a owl:Class ;
 
 #Territory Indicator
 
-#TODO faire la classification territory indicator et movement indicator et skos concept pour les sous
 mvdo:TerritoryIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Territory indicator"@en ;
     rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
 
-#Travel Flow
+#Movement Indicator
 
-mvdo:TravelFlow a owl:Class ;
+mvdo:MovementIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
-    rdfs:label "Travel flow"@en ;
-    rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
+    rdfs:label "Movement indicator"@en ;
+    rdfs:comment ""@en .
 
 mvdo:hasIndicatorType a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
