@@ -13,7 +13,7 @@ mvdth: a skos:ConceptScheme ;
 
 ### Theme Vocabulary
 
-mvdth:ThemeScheme a skos:ConceptScheme;
+mvdth:ThemeScheme a skos:ConceptScheme ;
     skos:hasTopConcept mvdth:TripPurpose, mvdth:TransportationMode ;
     skos:definition "Global concept scheme englobing every concepts and collections that describe objects and spatial events, such as transportation mode or trip purposes"@en ;
     skos:prefLabel "Global theme vocabulary"@en .
@@ -21,7 +21,7 @@ mvdth:ThemeScheme a skos:ConceptScheme;
 #Trip Purpose Theme
 
 mvdth:TripPurpose a skos:Concept, mvdo:TripPurpose ;
-    skos:inScheme mvdth:ThemeScheme;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:topConceptOf mvdth:ThemeScheme ;
     skos:definition "Parent concept of every concepts related to the main reason for making a trip"@en ;
     skos:prefLabel "Trip purpose"@en .
@@ -315,7 +315,7 @@ mvdth:OtherPurposeNotListed a skos:Concept, mvdo:TripPurpose ;
 #Transportation Mode Theme
 
 mvdth:TransportationMode a skos:Concept, mvdo:TransportationMode ;
-    skos:inScheme mvdth:ThemeScheme;
+    skos:inScheme mvdth:ThemeScheme ;
     skos:topConceptOf mvdth:ThemeScheme ;
     skos:definition "Parent concept of every concepts related to any kind of vehicle or methode used for a trip"@en ;
     skos:prefLabel "Transportation mode"@en .
@@ -479,15 +479,15 @@ mvdth:VariousOtherModes a skos:Concept, mvdo:TransportationMode ;
 
 ### Indicator Vocabulary
 
-mvdth:IndicatorsScheme a skos:ConceptScheme;
-    skos:definition "Global concept scheme englobing every concepts and collections that describe statistical indicators"@en;
+mvdth:IndicatorsScheme a skos:ConceptScheme ;
+    skos:definition "Global concept scheme englobing every concepts and collections that describe statistical indicators"@en ;
     skos:prefLabel "Global indicator vocabulary"@en .
 
 #Territorial Indicators
 
 mvdth:TerritorialIndicatorsCollection a skos:Collection ;
     skos:inScheme mvdth:IndicatorsScheme ;
-    skos:definition "A collection grouping every concepts related to territorial indicators"@en;
+    skos:definition "A collection grouping every concepts related to territorial indicators"@en ;
     skos:member mvdth:Presence, mvdth:Fluctuation, mvdth:Attractiveness ;
     skos:prefLabel "Territorial indicators collection"@en .
 
@@ -505,3 +505,29 @@ mvdth:Attractiveness a skos:Concept, mvdo:TerritoryIndicator ;
     skos:inScheme mvdth:IndicatorsScheme ;
     skos:definition "Territorial indicator measuring the aggregate number of movers that visited a spatial location over 24 hours divided by the location\'s population size, adjusted by the global value of this same ratio for the whole region"@en ;
     skos:prefLabel "Attractiveness"@en .
+
+### Object Vocabulary
+
+mvdth:ObjectsScheme a skos:ConceptScheme ;
+    skos:definition "Global concept scheme englobing every concepts and collections that describe objects"@en ;
+    skos:prefLabel "Global object vocabulary"@en .
+
+#Objects
+
+mvdth:ObjectsCollection a skos:Collection ;
+    skos:inScheme mvdth:ObjectsScheme ;
+    skos:definition "A collection grouping every concepts related to objects"@en ;
+    skos:member mvdth:Movers, mvdth:Trips ;
+    skos:prefLabel "Objects collection"@en .
+
+mvdth:Movers a skos:Concept, mvdo:Object ;
+    skos:inScheme mvdth:ObjectsScheme ;
+    skos:definition "A physical entity, whose count within a spatial location serves as the basis for calculating territorial indicators related to human presence, density, or fluctuation"@en ;
+    skos:prefLabel "Movers"@en .
+
+mvdth:Trips a skos:Concept, mvdo:Object ;
+    skos:inScheme mvdth:ObjectsScheme ;
+    skos:definition "An abstract entity with an origin to a destination, whose destination count serves as the basis for calculating movement indicators related to travel volume or mobility rates"@en ;
+    skos:prefLabel "Trips"@en .
+
+#

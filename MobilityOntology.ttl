@@ -187,20 +187,9 @@ mvdo:hasPopulation a owl:DatatypeProperty ;
 
 ### Object
 
-#TODO ranformer trips et movers en skos concepts
 mvdo:Object a owl:Class ;
     rdfs:label "Object"@en ;
     rdfs:comment "A physical or abstract entity that serves as the basis for calculating a territorial indicator, such as trips or movers"@en .
-
-mvdo:Trips a owl:Class ;
-    rdfs:subClassOf mvdo:Object ;
-    rdfs:label "Trips"@en ;
-    rdfs:comment "An abstract entity with an origin to a destination, whose destination count serves as the basis for calculating territorial indicators related to travel volume or mobility rates"@en .
-
-mvdo:Movers a owl:Class ;
-    rdfs:subClassOf mvdo:Object ;
-    rdfs:label "Movers"@en ;
-    rdfs:comment "A physical entity, whose count within a spatial location serves as the basis for calculating territorial indicators related to human presence, density, or fluctuation."@en .
 
 ### Theme
 
