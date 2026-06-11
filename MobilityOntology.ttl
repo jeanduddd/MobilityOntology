@@ -17,36 +17,37 @@ mvdo: a owl:Ontology ;
 
 ### Indicators
 
-# General Indicator
+# Indicator
 
 # Use prov:wasDerivedFrom from PROV ontology to link the indicator to the indicator from which it was derived
-mvdo:GeneralIndicator a owl:Class ;
+mvdo:Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity, sosa:ObservableProperty ;
-    rdfs:label "General indicator"@en ;
+    rdfs:label "Indicator"@en ;
     rdfs:comment "Superclass for every type of indicator"@en .
 
 #Territory Indicator
 
+#TODO faire la classification territory indicator et movement indicator et skos concept pour les sous
 mvdo:TerritoryIndicator a owl:Class ;
-    rdfs:subClassOf mvdo:GeneralIndicator ;
+    rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Territory indicator"@en ;
     rdfs:comment "Statistical indicator corresponding to the number of visitors in the location at a particular time unit"@en .
 
 #Travel Flow
 
 mvdo:TravelFlow a owl:Class ;
-    rdfs:subClassOf mvdo:GeneralIndicator ;
+    rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Travel flow"@en ;
     rdfs:comment "Statistical indicator corresponding to the flow magnitude between two locations"@en .
 
 mvdo:hasIndicatorType a owl:ObjectProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range skos:Concept ;
     rdfs:label "has indicator type"@en ;
     rdfs:comment "Links an indicator to the conceptual type of indicator it instantiates."@en .
 
 mvdo:hasObject a owl:ObjectProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range mvdo:Object ;
     rdfs:label "has object" ;
     rdfs:comment "Links an indicator to the object counted to compute the territoral indicator, such as trips or movers"@en .
@@ -55,61 +56,61 @@ mvdo:hasObject a owl:ObjectProperty ;
 # Use qudt:hasDenominatorPart from QUDT to link a quantity to the value of its denominator's formula. It can be anything such as a Literal or a String
 # Use qudt:mathDefinition from QUDT to link a quantity to its formula. It can be anything such as a Literal or a String
 mvdo:hasCalculationMethod a owl:ObjectProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range qudt:Quantity ;
     rdfs:label "has calculation method"@en ;
     rdfs:comment "Links an indicator to its measurement's formula. It can be either a rate/share or a one-line formula"@en .
 
 mvdo:hasTerritorialPartition a owl:ObjectProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range mvdo:TerritorialPartition ;
     rdfs:label "has territorial partition" ;
     rdfs:comment "Links an indicator to the territorial partition's characteristics when the space is not aggregated"@en .
 
 mvdo:hasSpatialGranularity a owl:DatatypeProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
-    rdfs:range xsd:Literal ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "has space aggregation" ;
     rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
 
 mvdo:hasTimeGranularity a owl:DatatypeProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
-    rdfs:range xsd:Literal ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range rdfs:Literal ;
     rdfs:label "has time aggregation" ;
     rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
 
 mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
-    rdfs:domain mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:Indicator ;
     rdfs:range skos:Concept ;
     rdfs:label "has thematic attribute" ;
     rdfs:comment "Links an indicator to the conceptual thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
 
-#Indicator Record
+#Data Record
 
-# Use sosa:hasSimpleResult from SOSA ontology to link an indicator record to its value
-mvdo:IndicatorRecord a owl:Class ;
+# Use sosa:hasSimpleResult from SOSA ontology to link a data record to its value
+mvdo:DataRecord a owl:Class ;
     rdfs:subclassOf sosa:Observation ;
-    rdfs:label "Indicator record" ;
-    rdfs:comment "A specific data point representing the calculated value of a General Indicator for a given spatial context and time interval."@en .
+    rdfs:label "Data record" ;
+    rdfs:comment "A specific data point representing the calculated value of a Indicator for a given spatial context and time interval."@en .
 
 mvdo:isRecordOf a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:observedProperty ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:GeneralIndicator ;
+    rdfs:domain mvdo:DataRecord ;
+    rdfs:range mvdo:Indicator ;
     rdfs:label "is record of" ;
-    rdfs:comment "Links an indicator record to the abstract general indicator that it evaluates"@en .
+    rdfs:comment "Links a data record to the abstract indicator that it evaluates"@en .
 
 mvdo:hasTransportationMode a owl:ObjectProperty ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:TransportationMode ;
     rdfs:label "has transportation mode"@en ;
-    rdfs:comment "Links an indicator record to the thematic attribute of the transportation mode it has been computed with"@en .
+    rdfs:comment "Links a data record to the thematic attribute of the transportation mode it has been computed with"@en .
 
 mvdo:hasTripPurpose a owl:ObjectProperty ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:TripPurpose ;
     rdfs:label "has trip purpose"@en ;
-    rdfs:comment "Links an indicator record to the thematic attribute of the trip purpose it has been computed with"@en .  
+    rdfs:comment "Links a data record to the thematic attribute of the trip purpose it has been computed with"@en .  
 
 # Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
 # Use time:hasEnd from OWL Time to add an end time instant to the time interval
@@ -124,36 +125,29 @@ mvdo:hasTripPurpose a owl:ObjectProperty ;
 # Use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
 mvdo:hasTimeInterval a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:phenomenonTime ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range time:Interval ;
     rdfs:label "has time"@en ;
-    rdfs:comment "Links an indicator record to the temporal extent it was computed"@en .
+    rdfs:comment "Links a data record to the temporal extent it was computed"@en .
 
 #Spatial links properties
 
 mvdo:hasSpatialLocation a owl:ObjectProperty ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has spatial location"@en ;
-    rdfs:comment "Superclass to link any kind of indicator record to the spatial location it describes"@en .
-
-mvdo:hasReferenceArea a owl:ObjectProperty ;
-    rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
-    rdfs:range mvdo:Space ;
-    rdfs:label "has reference area"@en ;
-    rdfs:comment "Links a territory indicator record to the location it describes"@en .
+    rdfs:comment "Links a data record to the spatial location it describes"@en .
 
 mvdo:hasOrigin a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
     rdfs:comment "Links a flow record to its origin location"@en .
 
 mvdo:hasDestination a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
-    rdfs:domain mvdo:IndicatorRecord ;
+    rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has destination"@en ;
     rdfs:comment "Links a flow record to its destination location"@en .
@@ -193,6 +187,7 @@ mvdo:hasPopulation a owl:DatatypeProperty ;
 
 ### Object
 
+#TODO ranformer trips et movers en skos concepts
 mvdo:Object a owl:Class ;
     rdfs:label "Object"@en ;
     rdfs:comment "A physical or abstract entity that serves as the basis for calculating a territorial indicator, such as trips or movers"@en .
