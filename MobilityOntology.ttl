@@ -58,8 +58,7 @@ mvdo:hasCalculationModel a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range qudt:QuantityKind ;
     rdfs:label "has calculation model"@en ;
-    rdfs:comment "Links an indicator to its measurement's formula. It can be either a rate/share or a one-line formula"@en .
-    #TODO changer comment
+    rdfs:comment "Links an indicator to its calculation model"@en .
 
 mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
@@ -231,7 +230,7 @@ mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:label "contains space"@en ;
     rdfs:comment "Links a territorial partition to the locations it contains"@en .
 
-### Calculation Method
+### Calculation Model
 
 # Use qudt:hasNumeratorPart from QUDT to link a quantity kind to the value of its numerator's formula. It can be anything such as a Literal or a String
 # Use qudt:hasDenominatorPart from QUDT to link a quantity kind to the value of its denominator's formula. It can be anything such as a Literal or a String
@@ -239,6 +238,4 @@ mvdo:containsSpace a owl:ObjectProperty ;
 mvdo:CalculationModel a owl:Class ;
     rdfs:subclassOf qudt:QuantityKind ;
     rdfs:label "Calculation model"@en ;
-    rdfs:comment ""@en .
-
-    #todo implement comment
+    rdfs:comment "Mathematical method used to calculate an indicator, such as a count, a ratio or a density"@en .
