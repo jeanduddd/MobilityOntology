@@ -3,6 +3,7 @@
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix mvdth: <http://ns.inria.fr/movida/thesaurus#> .
 
 mvdth: a skos:ConceptScheme ;
@@ -552,3 +553,37 @@ mvdth:Trips a skos:Concept, mvdo:Object ;
     skos:inScheme mvdth:ObjectsScheme ;
     skos:definition "An abstract entity with an origin to a destination, whose destination count serves as the basis for calculating movement indicators related to travel volume or mobility rates"@en ;
     skos:prefLabel "Trips"@en .
+
+###QuantityKind Vocabulary
+
+#TODO modify defs
+
+mvdth:QuantityKindScheme a skos:ConceptScheme ;
+    skos:definition "Global concept scheme englobing every concepts and collections that describe objects"@en ;
+    skos:prefLabel "Global object vocabulary"@en .
+
+#QuantityKinds
+
+mvdth:QuantityKindCollection a skos:Collection ;
+    skos:inScheme mvdth:ObjectsScheme ;
+    skos:definition "A collection grouping every concepts related to quantity kind"@en ;
+    skos:member mvdth:MobilityCount, mvdth:MobilityRatio, mvdth:MobilityDensity ;
+    skos:prefLabel "Quantity kind collection"@en .
+
+mvdth:MobilityCount a skos:Concept, mvdo:CalculationModel ;
+    skos:inScheme mvdth:QuantityScheme ;
+    skos:broader quantitykind:Count ;
+    skos:definition ""@en ;
+    skos:prefLabel "Mobility count"@en .
+
+mvdth:MobilityRatio a skos:Concept, mvdo:CalculationModel ;
+    skos:inScheme mvdth:QuantityScheme ;
+    skos:broader quantitykind:DimensionlessRatio ; 
+    skos:definition ""@en ;
+    skos:prefLabel "Mobility ratio"@en .
+
+mvdth:MobilityDensity a skos:Concept, mvdo:CalculationModel ;
+    skos:inScheme mvdth:QuantityScheme ;
+    skos:broader quantitykind:AreaDensity ;
+    skos:definition ""@en ;
+    skos:prefLabel "Mobility density"@en .

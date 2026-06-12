@@ -53,14 +53,13 @@ mvdo:hasObject a owl:ObjectProperty ;
     rdfs:label "has object" ;
     rdfs:comment "Links an indicator to the object counted to compute the territoral indicator, such as trips or movers"@en .
 
-# Use qudt:hasNumeratorPart from QUDT to link a quantity to the value of its numerator's formula. It can be anything such as a Literal or a String
-# Use qudt:hasDenominatorPart from QUDT to link a quantity to the value of its denominator's formula. It can be anything such as a Literal or a String
-# Use qudt:mathDefinition from QUDT to link a quantity to its formula. It can be anything such as a Literal or a String
-mvdo:hasCalculationMethod a owl:ObjectProperty ;
+mvdo:hasCalculationModel a owl:ObjectProperty ;
+    rdfs:subPropertyOf qudt:hasQuantityKind ;
     rdfs:domain mvdo:Indicator ;
-    rdfs:range qudt:Quantity ;
-    rdfs:label "has calculation method"@en ;
+    rdfs:range qudt:QuantityKind ;
+    rdfs:label "has calculation model"@en ;
     rdfs:comment "Links an indicator to its measurement's formula. It can be either a rate/share or a one-line formula"@en .
+    #TODO changer comment
 
 mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
@@ -231,3 +230,15 @@ mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:range mvdo:Space ;
     rdfs:label "contains space"@en ;
     rdfs:comment "Links a territorial partition to the locations it contains"@en .
+
+### Calculation Method
+
+# Use qudt:hasNumeratorPart from QUDT to link a quantity kind to the value of its numerator's formula. It can be anything such as a Literal or a String
+# Use qudt:hasDenominatorPart from QUDT to link a quantity kind to the value of its denominator's formula. It can be anything such as a Literal or a String
+# Use qudt:expression from QUDT to link a quantity kind to its one line formula. It can be anything such as a Literal or a String
+mvdo:CalculationModel a owl:Class ;
+    rdfs:subclassOf qudt:QuantityKind ;
+    rdfs:label "Calculation model"@en ;
+    rdfs:comment ""@en .
+
+    #todo implement comment
