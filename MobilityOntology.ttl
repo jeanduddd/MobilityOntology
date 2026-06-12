@@ -53,12 +53,12 @@ mvdo:hasObject a owl:ObjectProperty ;
     rdfs:label "has object" ;
     rdfs:comment "Links an indicator to the object counted to compute the territoral indicator, such as trips or movers"@en .
 
-mvdo:hasCalculationModel a owl:ObjectProperty ;
+mvdo:hasCalculationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf qudt:hasQuantityKind ;
     rdfs:domain mvdo:Indicator ;
-    rdfs:range qudt:QuantityKind ;
-    rdfs:label "has calculation model"@en ;
-    rdfs:comment "Links an indicator to its calculation model"@en .
+    rdfs:range mvdo:CalculationMethod ;
+    rdfs:label "has calculation method"@en ;
+    rdfs:comment "Links an indicator to its calculation method"@en .
 
 mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
@@ -230,12 +230,12 @@ mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:label "contains space"@en ;
     rdfs:comment "Links a territorial partition to the locations it contains"@en .
 
-### Calculation Model
+### Calculation Method
 
 # Use qudt:hasNumeratorPart from QUDT to link a quantity kind to the value of its numerator's formula. It can be anything such as a Literal or a String
 # Use qudt:hasDenominatorPart from QUDT to link a quantity kind to the value of its denominator's formula. It can be anything such as a Literal or a String
 # Use qudt:expression from QUDT to link a quantity kind to its one line formula. It can be anything such as a Literal or a String
-mvdo:CalculationModel a owl:Class ;
+mvdo:CalculationMethod a owl:Class ;
     rdfs:subclassOf qudt:QuantityKind ;
-    rdfs:label "Calculation model"@en ;
+    rdfs:label "Calculation method"@en ;
     rdfs:comment "Mathematical method used to calculate an indicator, such as a count, a ratio or a density"@en .

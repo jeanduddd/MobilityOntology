@@ -568,20 +568,20 @@ mvdth:QuantityKindCollection a skos:Collection ;
     skos:member mvdth:MobilityCount, mvdth:MobilityRatio, mvdth:MobilityDensity ;
     skos:prefLabel "Quantity kind collection"@en .
 
-mvdth:MobilityCount a skos:Concept, mvdo:CalculationModel ;
+mvdth:MobilityCount a skos:Concept, mvdo:CalculationMethod ;
     skos:inScheme mvdth:QuantityScheme ;
     skos:broader quantitykind:Count ;
-    skos:definition "Calculation model representing a row count like the number of trips or the number of movers"@en ;
+    skos:definition "Calculation method representing a row count like the number of trips or the number of movers"@en ;
     skos:prefLabel "Mobility count"@en .
 
-mvdth:MobilityRatio a skos:Concept, mvdo:CalculationModel ;
+mvdth:MobilityRatio a skos:Concept, mvdo:CalculationMethod ;
     skos:inScheme mvdth:QuantityScheme ;
     skos:broader quantitykind:DimensionlessRatio ; 
-    skos:definition "Calculation model representing the division of two quantities resulting in a dimensionless value or percentage"@en ;
+    skos:definition "Calculation method representing the division of two quantities resulting in a dimensionless value or percentage"@en ;
     skos:prefLabel "Mobility ratio"@en .
 
-mvdth:MobilityDensity a skos:Concept, mvdo:CalculationModel ;
+mvdth:MobilityDensity a skos:Concept, mvdo:CalculationMethod ;
     skos:inScheme mvdth:QuantityScheme ;
     skos:broader quantitykind:AreaDensity ;
-    skos:definition "Calculation model representing the division a count by a geographical area such as the number of movers per square kilometer"@en ;
+    skos:definition "Calculation method representing the division a count by a geographical area such as the number of movers per square kilometer"@en ;
     skos:prefLabel "Mobility density"@en .
