@@ -560,28 +560,28 @@ mvdth:QuantityKindScheme a skos:ConceptScheme ;
     skos:definition "Global concept scheme englobing every concepts and collections that describe quantity kinds"@en ;
     skos:prefLabel "Global object vocabulary"@en .
 
-#QuantityKinds
+#Quantity Kinds
 
 mvdth:QuantityKindCollection a skos:Collection ;
-    skos:inScheme mvdth:ObjectsScheme ;
+    skos:inScheme mvdth:QuantityKindScheme ;
     skos:definition "A collection grouping every concepts related to quantity kinds"@en ;
     skos:member mvdth:MobilityCount, mvdth:MobilityRatio, mvdth:MobilityDensity ;
     skos:prefLabel "Quantity kind collection"@en .
 
 mvdth:MobilityCount a skos:Concept, mvdo:CalculationMethod ;
-    skos:inScheme mvdth:QuantityScheme ;
+    skos:inScheme mvdth:QuantityKindScheme ;
     skos:broader quantitykind:Count ;
     skos:definition "Calculation method representing a row count like the number of trips or the number of movers"@en ;
     skos:prefLabel "Mobility count"@en .
 
 mvdth:MobilityRatio a skos:Concept, mvdo:CalculationMethod ;
-    skos:inScheme mvdth:QuantityScheme ;
+    skos:inScheme mvdth:QuantityKindScheme ;
     skos:broader quantitykind:DimensionlessRatio ; 
     skos:definition "Calculation method representing the division of two quantities resulting in a dimensionless value or percentage"@en ;
     skos:prefLabel "Mobility ratio"@en .
 
 mvdth:MobilityDensity a skos:Concept, mvdo:CalculationMethod ;
-    skos:inScheme mvdth:QuantityScheme ;
+    skos:inScheme mvdth:QuantitKindyScheme ;
     skos:broader quantitykind:AreaDensity ;
     skos:definition "Calculation method representing the division a count by a geographical area such as the number of movers per square kilometer"@en ;
     skos:prefLabel "Mobility density"@en .
