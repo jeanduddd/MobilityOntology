@@ -58,7 +58,7 @@ mvdo:hasObject a owl:ObjectProperty ;
 mvdo:hasCalculationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf qudt:hasQuantityKind ;
     rdfs:domain mvdo:Indicator ;
-    rdfs:range mvdo:CalculationMethod ; # TODO: I could not find the SKOS for the calculation methods
+    rdfs:range mvdo:CalculationMethod ;
     rdfs:label "has calculation method"@en ;
     rdfs:comment "Links an indicator to its calculation method."@en .
 
@@ -68,37 +68,22 @@ mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:label "has territorial partition" ;
     rdfs:comment "Links an indicator to the territorial partition of reference for the indicator. This information is particularly usefull to describe indicators defined per spatial location."@en .
 
-# TODO: the following prooperties have to be reviewed, a spatial granularity would be directly a territorial partition (e.g. the space is described via neighborhoods), while here we only want to indicate whether the space is aggregated or not. Same for time. I suggest to change these properties for a boolean one, eg.
-
-mvdo:isAggregated a owl:DatatypeProperty ;
-    rdfs:domain [
-        a owl:Class ;
-        owl:unionOf (
-            mvdo:Space
-            mvdo:Time # TODO: this class should exist, see comment below
-        )
-    ] ;
-    rdfs:range rdfs:Boolean ;
-    rdfsl:label "is aggregated";
-    rdfs:comment "Defines whether the space or time dimensions are aggregated, e.g., the indicator is defined over the whole territory or individual spatial locations."  .
-
-# mvdo:hasSpatialGranularity a owl:DatatypeProperty ;
-#     rdfs:domain mvdo:Indicator ;
-#     rdfs:range rdfs:Literal ;
-#     rdfs:label "has space aggregation" ;
-#     rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
-
-# mvdo:hasTimeGranularity a owl:DatatypeProperty ;
-#     rdfs:domain mvdo:Indicator ;
-#     rdfs:range rdfs:Literal ;
-#     rdfs:label "has time aggregation" ;
-#     rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
-
-# TODO: rename this as mvdo:hasTheme ; and there the range is mvdo:Theme, which is instantiated as SKOS concepts
-mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
+mvdo:isSpaceAggregated a owl:DatatypeProperty ;
     rdfs:domain mvdo:Indicator ;
-    rdfs:range skos:Concept ;
-    rdfs:label "has thematic attribute" ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is space aggregated" ;
+    rdfs:comment "Links an indicator with a boolean defining whether the space dimension is aggregated, e.g., the indicator is defined over the whole territory or individual spatial locations."@en .
+
+mvdo:isTimeAggregated a owl:DatatypeProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is time aggregated" ;
+    rdfs:comment "Links an indicator with a boolean defining whether the time dimension is aggregated."@en .
+
+mvdo:hasTheme a owl:ObjectProperty ;
+    rdfs:domain mvdo:Indicator ;
+    rdfs:range mvdo:Theme ;
+    rdfs:label "has theme" ;
     rdfs:comment "Links an indicator to the conceptual thematic attribute category it records. This property is used for presence indicator, to specify whether it's a global presence (no thematic attribute) or is disaggregated by a specific theme such as trip purpose for the presence per activity indicator"@en .
 
 #Data Record
@@ -128,27 +113,10 @@ mvdo:hasTripPurpose a owl:ObjectProperty ;
     rdfs:label "has trip purpose"@en ;
     rdfs:comment "Links a data record to a trip purpose for which it is calculated."@en .  
 
-# Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
-# Use time:hasEnd from OWL Time to add an end time instant to the time interval
-# Use time:inDateTime from OWL Time to link an time instant to a structured date time description
-
-# Use time:hasDurationDescription from OWL Time to link a time interval to a structured duration description
-# Use time:hasTemporalDuration from OWL time to link a time Interval to a Generalized Duration Description
-
-# Use time:hasDuration from OWL Time to link a time interval to a Duration
-# Use time:numericalDuration from OWL Time to link a Duration to its numerical value
-
-# Use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
-
-# TODO: for the sake of consistency, I propose to create a class mvdo:Time which is a subclass of time:Interval. This way we can model the data according to the defined dimensions.
-
-mvdo:Time a owl:Class ;
-    rdfs:subClassOf time:Interval . # TODO: to be completed and used instead of time:Interval from here forward
-
-mvdo:hasTimeInterval a owl:ObjectProperty ;
+mvdo:hasTime a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:phenomenonTime ;
     rdfs:domain mvdo:DataRecord ;
-    rdfs:range time:Interval ;
+    rdfs:range mvdo:Time ;
     rdfs:label "has time"@en ;
     rdfs:comment "Links a data record to the temporal extent it was computed"@en .
 
@@ -207,6 +175,25 @@ mvdo:hasPopulation a owl:DatatypeProperty ;
     rdfs:label "has population"@en ;
     rdfs:comment "Links a spatial location to the population that inhabitates it."@en .
 
+### Time
+
+# Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
+# Use time:hasEnd from OWL Time to add an end time instant to the time interval
+# Use time:inDateTime from OWL Time to link an time instant to a structured date time description
+
+# Use time:hasDurationDescription from OWL Time to link a time interval to a structured duration description
+# Use time:hasTemporalDuration from OWL time to link a time Interval to a Generalized Duration Description
+
+# Use time:hasDuration from OWL Time to link a time interval to a Duration
+# Use time:numericalDuration from OWL Time to link a Duration to its numerical value
+
+# Use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
+
+mvdo:Time a owl:Class ;
+    rdfs:subClassOf time:Interval ;
+    rdfs:label "Time"@en ;
+    rdfs:comment "A class used to describe a time interval."@en .
+
 ### Object
 
 mvdo:Object a owl:Class ;
@@ -262,5 +249,3 @@ mvdo:CalculationMethod a owl:Class ;
     rdfs:subclassOf qudt:QuantityKind ;
     rdfs:label "Calculation method"@en ;
     rdfs:comment "Mathematical method used to calculate an indicator, such as a count, a ratio or a density"@en .
-
-# TODO: specific calculation methods to be defined as a SKOS, in a high-level but homogeneous manner.
