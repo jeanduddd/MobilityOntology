@@ -53,6 +53,8 @@ mvdo:hasObject a owl:ObjectProperty ;
     rdfs:label "has object" ;
     rdfs:comment "Links an indicator to the object counted to compute the territoral indicator, such as trips or movers"@en .
 
+# Use quantitykind concepts from quantitykind vocabulary as range to indicate the method of calculation of the indicator
+# ex : quantitykind:Count, quantitykind:DimensionlessRatio, quantitykind:AreaDensity...
 mvdo:hasCalculationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf qudt:hasQuantityKind ;
     rdfs:domain mvdo:Indicator ;
