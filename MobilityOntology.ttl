@@ -23,21 +23,21 @@ mvdo: a owl:Ontology ;
 mvdo:Indicator a owl:Class ;
     rdfs:subClassOf prov:Entity, sosa:ObservableProperty ;
     rdfs:label "Indicator"@en ;
-    rdfs:comment "Superclass for every type of indicator"@en .
+    rdfs:comment "Indicators describe mobility measures throughout space, time, and theme dimensions. This class is further specialized to describe different types of indicators."@en .
 
 #Territory Indicator
 
 mvdo:TerritoryIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Territory indicator"@en ;
-    rdfs:comment "Statistical indicator describing a mobility phenomenon, such as presence, fluctuation, or attractiveness, within a defined spatial location"@en .
+    rdfs:comment "Statistical indicator describing the usage of a spatial location, such as via the presence of individuals. Usually defined over multiple time intervals and described by thematic attributes such as performed activities."@en .
 
 #Movement Indicator
 
 mvdo:MovementIndicator a owl:Class ;
     rdfs:subClassOf mvdo:Indicator ;
     rdfs:label "Movement indicator"@en ;
-    rdfs:comment "Statistical indicator describing the physical displacement of entities, such as trips or flows"@en .
+    rdfs:comment "Statistical indicator describing the movement of entities, such as via trips or flows. Usually defined over multiple time intervals and described via thematic attributes, such as trip purposes and transportation modes."@en .
 
 #Indicator properties
 
@@ -45,41 +45,56 @@ mvdo:hasIndicatorType a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range skos:Concept ;
     rdfs:label "has indicator type"@en ;
-    rdfs:comment "Links an indicator to the conceptual type of indicator it instantiates."@en .
+    rdfs:comment "Links an indicator to the conceptual type of indicator (e.g., presence, fluctuation, travel flows) it instantiates."@en .
 
 mvdo:hasObject a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range mvdo:Object ;
     rdfs:label "has object" ;
-    rdfs:comment "Links an indicator to the object counted to compute the territoral indicator, such as trips or movers"@en .
+    rdfs:comment "Links an indicator to the object of interest of the indicator, such as trips or movers."@en .
 
 # Use quantitykind concepts from quantitykind vocabulary as range to indicate the method of calculation of the indicator
 # ex : quantitykind:Count, quantitykind:DimensionlessRatio, quantitykind:AreaDensity...
 mvdo:hasCalculationMethod a owl:ObjectProperty ;
     rdfs:subPropertyOf qudt:hasQuantityKind ;
     rdfs:domain mvdo:Indicator ;
-    rdfs:range mvdo:CalculationMethod ;
+    rdfs:range mvdo:CalculationMethod ; # TODO: I could not find the SKOS for the calculation methods
     rdfs:label "has calculation method"@en ;
-    rdfs:comment "Links an indicator to its calculation method"@en .
+    rdfs:comment "Links an indicator to its calculation method."@en .
 
 mvdo:hasTerritorialPartition a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range mvdo:TerritorialPartition ;
     rdfs:label "has territorial partition" ;
-    rdfs:comment "Links an indicator to the territorial partition's characteristics when the space is not aggregated"@en .
+    rdfs:comment "Links an indicator to the territorial partition of reference for the indicator. This information is particularly usefull to describe indicators defined per spatial location."@en .
 
-mvdo:hasSpatialGranularity a owl:DatatypeProperty ;
-    rdfs:domain mvdo:Indicator ;
-    rdfs:range rdfs:Literal ;
-    rdfs:label "has space aggregation" ;
-    rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
+# TODO: the following prooperties have to be reviewed, a spatial granularity would be directly a territorial partition (e.g. the space is described via neighborhoods), while here we only want to indicate whether the space is aggregated or not. Same for time. I suggest to change these properties for a boolean one, eg.
 
-mvdo:hasTimeGranularity a owl:DatatypeProperty ;
-    rdfs:domain mvdo:Indicator ;
-    rdfs:range rdfs:Literal ;
-    rdfs:label "has time aggregation" ;
-    rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
+mvdo:isAggregated a owl:DatatypeProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            mvdo:Space
+            mvdo:Time # TODO: this class should exist, see comment below
+        )
+    ] ;
+    rdfs:range rdfs:Boolean ;
+    rdfsl:label "is aggregated";
+    rdfs:comment "Defines whether the space or time dimensions are aggregated, e.g., the indicator is defined over the whole territory or individual spatial locations."  .
 
+# mvdo:hasSpatialGranularity a owl:DatatypeProperty ;
+#     rdfs:domain mvdo:Indicator ;
+#     rdfs:range rdfs:Literal ;
+#     rdfs:label "has space aggregation" ;
+#     rdfs:comment "Links an indicator with a string describing whether the space is aggregated or not (individual or aggregate)"@en .
+
+# mvdo:hasTimeGranularity a owl:DatatypeProperty ;
+#     rdfs:domain mvdo:Indicator ;
+#     rdfs:range rdfs:Literal ;
+#     rdfs:label "has time aggregation" ;
+#     rdfs:comment "Links an indicator with a string describing whether the time is aggregated or not (individual or aggregated)"@en .
+
+# TODO: rename this as mvdo:hasTheme ; and there the range is mvdo:Theme, which is instantiated as SKOS concepts
 mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
     rdfs:domain mvdo:Indicator ;
     rdfs:range skos:Concept ;
@@ -92,26 +107,26 @@ mvdo:hasThematicAttributeGranularity a owl:ObjectProperty ;
 mvdo:DataRecord a owl:Class ;
     rdfs:subclassOf sosa:Observation ;
     rdfs:label "Data record" ;
-    rdfs:comment "A specific data point representing the calculated value of a Indicator for a given spatial context and time interval."@en .
+    rdfs:comment "A data point representing the value of an indicador for a specific combination of the mobility dimensions."@en .
 
 mvdo:isRecordOf a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:observedProperty ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Indicator ;
     rdfs:label "is record of" ;
-    rdfs:comment "Links a data record to the abstract indicator that it evaluates"@en .
+    rdfs:comment "Links a data record to the corresponding indicator."@en .
 
 mvdo:hasTransportationMode a owl:ObjectProperty ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:TransportationMode ;
     rdfs:label "has transportation mode"@en ;
-    rdfs:comment "Links a data record to the thematic attribute of the transportation mode it has been computed with"@en .
+    rdfs:comment "Links a data record to a transportation mode for which it is calculated."@en .
 
 mvdo:hasTripPurpose a owl:ObjectProperty ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:TripPurpose ;
     rdfs:label "has trip purpose"@en ;
-    rdfs:comment "Links a data record to the thematic attribute of the trip purpose it has been computed with"@en .  
+    rdfs:comment "Links a data record to a trip purpose for which it is calculated."@en .  
 
 # Use time:hasBeginning from OWL Time to add a begin time instant to the time interval
 # Use time:hasEnd from OWL Time to add an end time instant to the time interval
@@ -124,6 +139,12 @@ mvdo:hasTripPurpose a owl:ObjectProperty ;
 # Use time:numericalDuration from OWL Time to link a Duration to its numerical value
 
 # Use time:unitType from OWL Time to link a Duration or a General Date Time Description to its temporal unit / scale / granularity
+
+# TODO: for the sake of consistency, I propose to create a class mvdo:Time which is a subclass of time:Interval. This way we can model the data according to the defined dimensions.
+
+mvdo:Time a owl:Class ;
+    rdfs:subClassOf time:Interval . # TODO: to be completed and used instead of time:Interval from here forward
+
 mvdo:hasTimeInterval a owl:ObjectProperty ;
     rdfs:subPropertyOf sosa:phenomenonTime ;
     rdfs:domain mvdo:DataRecord ;
@@ -137,21 +158,21 @@ mvdo:hasSpatialLocation a owl:ObjectProperty ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has spatial location"@en ;
-    rdfs:comment "Links a data record to the spatial location it describes"@en .
+    rdfs:comment "Links a data record to the associated spatial location."@en .
 
 mvdo:hasOrigin a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has origin"@en ;
-    rdfs:comment "Links a flow record to its origin location"@en .
+    rdfs:comment "Links a movement data record to a origin spatial location."@en .
 
 mvdo:hasDestination a owl:ObjectProperty ;
     rdfs:subPropertyOf mvdo:hasSpatialLocation ;
     rdfs:domain mvdo:DataRecord ;
     rdfs:range mvdo:Space ;
     rdfs:label "has destination"@en ;
-    rdfs:comment "Links a flow record to its destination location"@en .
+    rdfs:comment "Links a movement record to a destination spatial location."@en .
 
 ###Space
 
@@ -160,77 +181,77 @@ mvdo:hasDestination a owl:ObjectProperty ;
 mvdo:Space a owl:Class ;
     rdfs:subClassOf geo:Feature ;
     rdfs:label "Space"@en ;
-    rdfs:comment "A class used to describe a spatial location"@en .
+    rdfs:comment "A class used to describe a spatial location."@en .
 
 mvdo:isPartOf a owl:ObjectProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range mvdo:Space ;
     rdfs:label "is part of"@en ;
-    rdfs:comment "Links a spatial location to the one that surrounds it"@en .
+    rdfs:comment "Creates a hierarchy of spatial locations by linking a spatial location to another location that contains it."@en .
 
 mvdo:hasID a owl:DatatypeProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has id"@en ;
-    rdfs:comment "Links a spatial location to its ID"@en .
+    rdfs:comment "Links a spatial location to an identifier."@en .
 
 mvdo:hasName a owl:DatatypeProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has name"@en ;
-    rdfs:comment "Links a spatial location to its name"@en .
+    rdfs:comment "Links a spatial location to a name."@en .
 
 mvdo:hasPopulation a owl:DatatypeProperty ;
     rdfs:domain mvdo:Space ;
     rdfs:range xsd:integer ;
     rdfs:label "has population"@en ;
-    rdfs:comment "Links a spatial location to its number of residents"@en .
+    rdfs:comment "Links a spatial location to the population that inhabitates it."@en .
 
 ### Object
 
 mvdo:Object a owl:Class ;
     rdfs:label "Object"@en ;
-    rdfs:comment "A physical or abstract entity that serves as the basis for calculating a territorial indicator, such as trips or movers"@en .
+    rdfs:comment "A physical or abstract entity that serves as the basis for calculating a territorial indicator, such as trips or movers."@en .
 
 ### Theme
 
 mvdo:Theme a owl:Class ;
     rdfs:label "Theme"@en ;
-    rdfs:comment "Describes the objects and spatial events according to socio-demographic aspects, activities and trip purposes, and transportation modes"@en .
+    rdfs:comment "Describes objects according to socio-demographic aspects, activities and trip purposes, and transportation modes"@en .
 
 mvdo:TripPurpose a owl:Class ;
     rdfs:subClassOf mvdo:Theme ;
     rdfs:label "Trip Purpose"@en ;
-    rdfs:comment "Thematic attribute that describes the main reason for making a trip"@en .
+    rdfs:comment "Thematic attribute describing a trip in terms of reasons (e.g., leisure, work, etc.) for taken it."@en .
 
 mvdo:TransportationMode a owl:Class ;
     rdfs:subClassOf mvdo:Theme ;
     rdfs:label "Transportation Mode"@en ;
-    rdfs:comment "Thematic attribute that describes with which travel medium the trip is made"@en .
+    rdfs:comment "Thematic attribute describing a trip in terms of which transportation mode (e.g., car, bike, bus, etc.) was used to perform it."@en .
 
 ### Territorial partition
 
 mvdo:TerritorialPartition a owl:Class ;
     rdfs:label "Territorial Partition"@en ;
-    rdfs:comment "A class used to describe the spatial granularity"@en .
+    rdfs:comment "A class used to describe the spatial granularity, i.e. how the territory is partitioned into spatial locations."@en .
 
 mvdo:hasPartitionID a owl:DatatypeProperty ;
     rdfs:domain mvdo:TerritorialPartition ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has partition id"@en ;
-    rdfs:comment "Links a territorial partition to its ID"@en .
+    rdfs:comment "Defines the identifier of the territorial partition."@en .
 
 mvdo:hasParts a owl:DatatypeProperty ;
     rdfs:domain mvdo:TerritorialPartition ;
     rdfs:range xsd:integer ;
     rdfs:label "has parts"@en ;
-    rdfs:comment "Links a territorial partition to the number of spatial location it contains"@en .
+    rdfs:comment "Defines the number of spatial locations contained in the territorial partition."@en .
 
 mvdo:containsSpace a owl:ObjectProperty ;
     rdfs:domain mvdo:TerritorialPartition ;
     rdfs:range mvdo:Space ;
     rdfs:label "contains space"@en ;
-    rdfs:comment "Links a territorial partition to the locations it contains"@en .
+    rdfs:comment "Links the territorial partitiion to its spatial locations."@en .
 
 ### Calculation Method
 
@@ -241,3 +262,5 @@ mvdo:CalculationMethod a owl:Class ;
     rdfs:subclassOf qudt:QuantityKind ;
     rdfs:label "Calculation method"@en ;
     rdfs:comment "Mathematical method used to calculate an indicator, such as a count, a ratio or a density"@en .
+
+# TODO: specific calculation methods to be defined as a SKOS, in a high-level but homogeneous manner.

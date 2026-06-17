@@ -4,10 +4,11 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix mvdth: <http://ns.inria.fr/movida/thesaurus#> .
+@prefix mvdo: <http;//ns.inria.fr/movida/ontology#> .
 
 mvdth: a skos:ConceptScheme ;
     rdfs:label "Mobility Ontology Vocabulary" ;
-    rdfs:comment "SKOS vocabulary for territorial mobility" ;
+    rdfs:comment "SKOS vocabulary for describing mobility dimensions." ;
     owl:versionInfo "1.0" ;
     owl:imports mvdo: .
 
@@ -15,7 +16,7 @@ mvdth: a skos:ConceptScheme ;
 
 mvdth:ThemeScheme a skos:ConceptScheme ;
     skos:hasTopConcept mvdth:TripPurpose, mvdth:TransportationMode ;
-    skos:definition "Global concept scheme englobing every concepts and collections that describe objects and spatial events, such as transportation mode or trip purposes"@en ;
+    skos:definition "Global concept scheme encompassing concepts and collections describing objects, such as transportation mode, trip purposes, or socio-demographic information."@en ;
     skos:prefLabel "Global theme vocabulary"@en .
 
 #Trip Purpose Theme
@@ -23,7 +24,7 @@ mvdth:ThemeScheme a skos:ConceptScheme ;
 mvdth:TripPurpose a skos:Concept, mvdo:TripPurpose ;
     skos:inScheme mvdth:ThemeScheme ;
     skos:topConceptOf mvdth:ThemeScheme ;
-    skos:definition "Parent concept of every concepts related to the main reason for making a trip"@en ;
+    skos:definition "Parent concept encompassing specific trip purposes."@en ;
     skos:prefLabel "Trip purpose"@en .
 
 mvdth:Work a skos:Concept, mvdo:TripPurpose ;
